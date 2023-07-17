@@ -3,9 +3,9 @@ import { graphql } from "gatsby";
 // import { StaticImage } from "gatsby-plugin-image"
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
 const Page = (props) => {
-  // const currentPage = props.data.wpPage;
+  const currentPage = props.data.wpPage;
   return (<div>{
-    // console.log("current page", props)
+    console.log("current page", props)
     }</div>
   )
 }
