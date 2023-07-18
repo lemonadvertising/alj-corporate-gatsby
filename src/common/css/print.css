@@ -1,0 +1,17 @@
+
+@media print {
+    .header,
+    .footer{
+        display: none;
+    }
+
+    .morenews,
+    .share-option,
+    .newsletter-container{
+        display: none;
+    }
+
+
+
+}
+

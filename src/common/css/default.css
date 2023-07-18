@@ -1,0 +1,70 @@
+
+body{
+    /* background-color: green; */
+}
+ .description img{
+    width: 100%;
+}
+
+.featured-article-wrapper{
+    margin-bottom: 60px;
+}
+.featured-article-wrapper h4{
+    margin-bottom: 25px;
+}
+.card-img-top{
+    height: 200px !important;
+}
+
+/* .form-check{
+    padding-left: 0px;
+} */
+
+.mediaCenterDaysWrapper{
+    margin: 20px 0px;
+}
+.related-articles .card{
+    width: 400px;
+}
+
+.heroSection{
+    margin: 25px 0;
+    /* background-color: green; */
+    /* height: 300px; */
+}
+.heroSection img{
+    width: 100%;
+    
+}
+
+
+.navbar a{
+    color: #000;
+    text-decoration: none;
+}
+
+
+.media-center-main-wrapper{
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.contact-us-container span{
+    color: red;
+}
+
+.contact-us-container .checkbox-error, .newsltrcheck .checkbox-error{
+    color: red;
+}
+.footerNav{
+    padding-bottom: 50px;
+}
+.footerNav ul{
+    display: flex;
+    flex-direction: row;
+}
+
+.footerNav ul li a{
+    color: #000;
+    text-decoration: none;
+}

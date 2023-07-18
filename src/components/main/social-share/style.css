@@ -1,0 +1,16 @@
+#linkcopiedStories{
+    display: none;
+}
+#linkcopiedStories.on{
+    display: block;
+}
+
+.share-options button{
+    /* width: 50px;         */
+}
+
+.share-options  img{
+    cursor: pointer;
+    height: 17px;
+    max-width: inherit;
+}

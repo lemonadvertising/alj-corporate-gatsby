@@ -1,0 +1,51 @@
+.wp-block-image figcaption,
+figcaption{
+    font-size: 12px;
+    font-weight: 200;
+  }
+
+
+body .is-layout-constrained > .alignright,
+body .is-layout-constrained > .alignleft{
+  -webkit-margin-start: 0 !important;
+  margin-inline-start: 0 !important;
+  -webkit-margin-end: 0 !important;
+  margin-inline-end: 0 !important;
+}
+
+
+.wp-block-embed-youtube .wp-block-embed__wrapper{
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+}
+.wp-block-embed-youtube .wp-block-embed__wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.wp-block-image.alignright{
+  float: right;
+  margin-inline-start: 1em;
+    margin-inline-end: 0;
+margin-inline-start: 1em;
+margin-inline-end: 0;
+}
+
+
+.wp-block-image.alignleft{
+  float: left;
+  margin-inline-start: 0;
+    margin-inline-end:  1em;
+margin-inline-start: 0;
+margin-inline-end:  1em;
+}
+ 
+.wp-block-image.aligncenter{
+  margin-left: auto !important;
+  margin-right: auto !important;
+ }
+   

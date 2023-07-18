@@ -1,0 +1,16 @@
+{
+    
+        "en_US":{
+            "text":"English",
+            "slug":"en"
+        },
+        "ar":{
+            "text":"عربى",
+            "slug":"ar"
+        },
+        "tr_TR":{
+            "text":"Türkçe",
+            "slug":"tr"
+        }
+    
+}
