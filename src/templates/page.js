@@ -6,12 +6,12 @@ import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
 const Page = (props) => {
   const currentPage = props.data.wpPage;
   return (
-    <Layout
-      lang={currentPage.locale.id}
-      title={currentPage.seo.opengraphTitle ? currentPage.seo.opengraphTitle : null}
-      description={currentPage.seo.opengraphDescription ? currentPage.seo.opengraphDescription : null}
-      image={currentPage.featuredImage.node.sourceUrl ? currentPage.featuredImage.node.sourceUrl : null}
-    >
+    // <Layout
+    //   lang={currentPage.locale.id}
+    //   title={currentPage.seo.opengraphTitle ? currentPage.seo.opengraphTitle : null}
+    //   description={currentPage.seo.opengraphDescription ? currentPage.seo.opengraphDescription : null}
+    //   image={currentPage.featuredImage.node.sourceUrl ? currentPage.featuredImage.node.sourceUrl : null}
+    // >
       <div className='container'>
         <div className='row'>
           <div className='col-md-12'>
@@ -24,7 +24,7 @@ const Page = (props) => {
           </div>
         </div>
       </div>
-    </Layout>
+    // </Layout>
   )
 }
 
@@ -41,14 +41,6 @@ export const painPage = graphql`
           altText
         }
       }
-      locale {
-        id
-      }
-      seo {
-        opengraphTitle
-        opengraphDescription
-      }
-
     }
   }
 `;
