@@ -3,7 +3,8 @@ import {useStaticQuery, graphql, Script } from "gatsby"
 import {Helmet} from "react-helmet";
 import Seo from "./main/Seo";
 import Header from "./main/Header"
-// import Footer from "./main/Footer"
+import Footer from "./main/Footer"
+import './../../static/common/css/default.css';
 // import metaImage from "../common/images/meta/metaImage.jpeg"
 
 
@@ -36,7 +37,7 @@ const [loaded, setLoaded] = useState(false)
       <div className="mainWrapper">
       <main style={{minHeight:500, paddingBottom:100}}>{children}</main>
       </div>
-    {/* <Footer lang={lang}/>         */}
+      <Footer lang={lang}/>        
     </div>
   )
 }

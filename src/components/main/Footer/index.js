@@ -88,7 +88,7 @@ const Footer = (props) => {
 
       var config = {
         method: 'post',
-        url: 'https://cms.jameelmotors.com/wp-content/themes/jameelmotors/addCf7.php',
+        url: 'https://aljcms.lemonhq.io/wp-content/themes/jameelmotors/addCf7.php',
         headers: {},
         data: data
       };

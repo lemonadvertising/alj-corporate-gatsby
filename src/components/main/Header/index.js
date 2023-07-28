@@ -25,10 +25,10 @@ export default function Header() {
       <Link to="/en/home"> Home</Link> &nbsp; &nbsp;
       </li>
       <li className="nav-item">
-      <Link to="/en/news"> News </Link> &nbsp; &nbsp;
+      <Link to="/en/news"> Press Release </Link> &nbsp; &nbsp;
       </li>
       <li className="nav-item">
-      <Link to="/en/insights"> In Sights </Link> &nbsp; &nbsp;
+      <Link to="/en/perspectives"> Perspectives </Link> &nbsp; &nbsp;
       </li>
       <li className="nav-item">
       <Link to="/en/in-the-news"> In The News </Link>&nbsp; &nbsp;
