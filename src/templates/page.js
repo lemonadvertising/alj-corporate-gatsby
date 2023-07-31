@@ -29,9 +29,16 @@ const Page = (props) => {
             <div className='col-md-12'>
               <Slider {...settings}>
               {spotlight?.edges.map((el) => (
-                  <div>
+                  <div>{
+                    console.log(el.node.spotlights.spotlight, '=====-=-------------=====')
+                    }
                     {el.node.spotlights.youtubeVideo == null ?
-                      <img src={el.node.spotlights.spotlight.sourceUrl} alt={el.node.spotlights.spotlight.sourceUrl ? el.node.spotlights.spotlight.sourceUrl : "image"} />
+                      el.node.spotlights.spotlight.mediaType == "file"?
+                      <video controls autoPlay playsInline>
+                        <source src={el.node.spotlights.spotlight.publicUrl} type="video/mp4"/>
+                      </video>
+                      :
+                        <img src={el.node.spotlights.spotlight.sourceUrl} alt={el.node.spotlights.spotlight.sourceUrl ? el.node.spotlights.spotlight.sourceUrl : "image"} />
                       :
                       <div>
                         <iframe
@@ -100,6 +107,8 @@ export const painPage = graphql`
             subTitle
             spotlight {
               sourceUrl
+              mediaType
+              publicUrl
             }
             youtubeVideo
           }

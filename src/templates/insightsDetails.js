@@ -5,7 +5,6 @@ import Layout from '../components/layout';
 import SocialShare from "../components/main/social-share"
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
 import RelatedArticles from '../components/MediaCenter/RelatedArticles'
-import NewsList from '../components/MediaCenter/NewsList'
 const Page = (props) => {
   const currentPage = props.data.wpPerspective;
   const relatedInsights = props.data.allWpPerspective

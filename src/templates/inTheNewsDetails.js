@@ -3,7 +3,6 @@ import { graphql } from "gatsby";
 import Layout from '../components/layout';
 // import { StaticImage } from "gatsby-plugin-image"
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
-import NewsList from '../components/MediaCenter/NewsList'
 import RelatedArticles from '../components/MediaCenter/RelatedArticles'
 import SocialShare from "../components/main/social-share"
 import "slick-carousel/slick/slick.css";

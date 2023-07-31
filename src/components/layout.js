@@ -5,11 +5,7 @@ import Seo from "./main/Seo";
 import Header from "./main/Header"
 import Footer from "./main/Footer"
 import './../../static/common/css/default.css';
-// import metaImage from "../common/images/meta/metaImage.jpeg"
-
-
 const Layout = ({ title,  description, image, isHomePage, children, lang }) => {
-
   const layoutData =  useStaticQuery(graphql`
     query LayoutQuery {
       wp {
@@ -20,7 +16,7 @@ const Layout = ({ title,  description, image, isHomePage, children, lang }) => {
       }
     }
   `)
-const [loaded, setLoaded] = useState(false)  
+const [loaded, setLoaded] = useState(false)
   return (
     <div>
       <Script src="/js/main.js" onLoad={() => setLoaded(true)} />
@@ -37,7 +33,7 @@ const [loaded, setLoaded] = useState(false)
       <div className="mainWrapper">
       <main style={{minHeight:500, paddingBottom:100}}>{children}</main>
       </div>
-      <Footer lang={lang}/>        
+    <Footer lang={lang}/>        
     </div>
   )
 }
