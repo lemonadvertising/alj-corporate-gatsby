@@ -68,3 +68,114 @@ body{
     color: #000;
     text-decoration: none;
 }
+
+
+/************map******/
+.mapplic-tooltip:after,
+.mapplic-tooltip-close{
+	display: none;
+}
+.map-wrapper{
+	background: rgb(12,24,45);
+background: linear-gradient(0deg, rgba(12,24,45,1) 0%, rgba(27,43,69,1) 100%);
+width: 100%;
+margin: 0 auto;
+position: relative;
+/* padding-top: 50px;
+padding-bottom: 50px; */
+
+}
+
+.mapplic-tooltip-body {
+    padding: 0 10px;
+}
+.mapplic-image, .mapplic-tooltip-wrap{
+    /* max-width: 320px !important; */
+    background: none;
+    box-shadow: none;
+    color: #4ec7e5;
+    /* border-left: 1px solid #4ec7e5; */
+    /* border-left: 1px solid #212529; */
+    /* margin-top: -65px;
+    margin-left: 14px; */
+	/* margin-top: -55px; */
+  /* margin-top: -67px; */
+  margin-top: -40px;
+    margin-left: 6px;
+    height: 50px;
+    -webkit-transform: inherit;
+    transform: inherit;
+    pointer-events: none;
+    transition: all 1s ease;
+}
+
+.mapplic-tooltip-title {
+    color: #212529;
+background-color: #fff;
+    font-size: 20px !important;
+	font-weight: 500;
+  padding: 5px;
+  /* position: absolute; */
+  /* width: 200px; */
+}
+
+
+
+/* NEW MAP */
+.mapMainWrapper{
+  background: rgb(14,46,86);
+    background: linear-gradient(90deg, rgba(14,46,86,1) 0%, rgba(1,110,189,1) 100%);
+}
+  .mapplic-legend{
+    background: none !important;
+    background-color: none;
+    color: #fff;				
+  }
+  .mapplic-legend-label{
+    margin: 16px 0;
+      padding-left: 40px;
+  }
+  .mapplic-legend-key{
+    height: 20px;
+    width: 25px;
+    border: 1px solid #fff;
+    border-radius: 0;
+    margin-top: -3px;
+  }
+  
+  .map-container{
+    position: relative;
+  }
+  .map-container ul{
+    /* list-style: none;
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    margin: 0;
+    padding: 0; */
+    bottom: 25px;
+    left: 0;
+    list-style: none;
+    margin: auto;
+    padding: 0 20px;
+    position: absolute;
+    width: 1140px;
+    right: 0;
+  }
+
+  .map-container ul li{
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  .map-container ul li p{
+    margin: 0;
+    margin-left: 10px;
+    color: #fff;
+    
+  }
+  .map-container ul li img{
+    width: 25px;
+    height: auto;
+  }
+/* NEW MAP */

@@ -1,0 +1,539 @@
+.animated-text {
+    height: 390px;
+}
+
+.slides,
+.flex-control-nav,
+.flex-direction-nav {
+    margin: 0;
+    padding: 0;
+    list-style: none
+}
+
+.flexslider {
+    margin: 0;
+    padding: 0
+}
+
+/*.flexslider-unused .slides>li {
+    display: none;
+    -webkit-backface-visibility: hidden
+}
+
+.flexslider .slides img {
+    max-width: 100%;
+    display: block
+}
+
+.slides:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0
+}
+*/
+.no-js .slides>li:first-child {
+    display: block
+}
+
+.flexslider {
+    background:none;
+    border: 0px solid #fff;
+    position: relative;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -o-border-radius: 0px;
+    border-radius: 0px;
+    zoom: 0
+}
+
+.flexslider .slides {
+    zoom: 0
+}
+
+.flexslider .slides>li {
+    position: relative
+}
+
+.flex-container {
+    zoom: 0;
+    position: relative
+}
+
+.flex-direction-nav {
+    height: 0
+}
+
+.flex-direction-nav li a {
+    width: 52px;
+    height: 52px;
+    margin: -13px 0 0;
+    display: block;
+    /*background: url(theme/bg_direction_nav.png) no-repeat;*/
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    text-indent: -999em
+}
+
+.flex-direction-nav li .next {
+    /*background-position: -41px 0;
+    right: -21px*/
+	background-position: -41px 0;
+    left: -21px;
+	top:31%;
+}
+
+.flex-direction-nav li .prev {
+    left: -20px
+}
+
+.flex-direction-nav li .disabled {
+    opacity: .9;
+    filter: alpha(opacity=90);
+    cursor: default
+}
+
+.flex-control-nav {
+    width: 100%;
+    position: absolute;
+    bottom: -30px;
+    text-align: center
+}
+
+.flex-control-nav li {
+    margin: 0 0 0 5px;
+    display: inline-block;
+    zoom: 1;
+    display: inline
+}
+
+.flex-control-nav li:first-child {
+    margin: 0
+}
+
+.flex-control-nav li a {
+    width: 13px;
+    height: 13px;
+    display: block;
+   /* background: url(theme/bg_control_nav.png) no-repeat;*/
+    cursor: pointer;
+    text-indent: -999em
+}
+
+.flex-control-nav li a:hover {
+    background-position: 0 -13px
+}
+
+.flex-control-nav li a.active {
+    background-position: 0 -26px;
+    cursor: default
+}
+
+#banners .flexslider .slides,
+#banners .flexslider .slides li,
+#banners .flexslider .slides a,
+#banners .flexslider .slides img,
+#banners .flexslider .slides iframe,
+#banners .flexslider .slides embed,
+#banners .flexslider .slides object {
+    height:auto;
+}
+
+.flexslider {
+    border: none;
+    border-radius: 0;
+    overflow: hidden
+}
+    .flexslider .slides{
+        height: 100%;
+    }
+.flexslider .slides li {
+    display: block;
+    background-size: cover;
+    background-position: center center;
+    height: 100%;
+
+}
+
+.flexslider .slides a,
+.flexslider .slides img {
+    border-bottom-width: 0;
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.flexslider .slides iframe,
+.flexslider .slides embed,
+.flexslider .slides object {
+    width: 100%
+}
+
+.flexslider .flex-control-nav {
+    display: block;
+    right: 0;
+    bottom: 0;
+    width:100%;
+	margin:0 auto;
+	text-align:center;
+	background-color:rgba(41, 38, 63, 0.8);
+	padding:10.5px 0;
+}
+
+.flex-slider-order-2 .flex-control-nav{
+	background-color:rgba(65, 83, 100, 0.8) !important;
+}
+
+.flex-slider-order-1 .text {
+    background: #e7e7e7 !important;
+}
+
+.flex-slider-order-1 .links a{
+background: url(https://media.aljhealth.com/wp-content/uploads/2021/03/21142452/new-arrow.png) no-repeat right center;
+    background-color:  #2c3843 !important;
+}
+
+.flex-slider-order-1 .links a:hover{
+background:  url(https://media.aljhealth.com/wp-content/uploads/2021/03/21142452/new-arrow.png) no-repeat right center;
+    background-color:#394652  !important;
+}
+
+.flex-slider-order-1 .links a:last-child{
+	background:url(https://media.aljhealth.com/wp-content/uploads/2021/03/21142452/new-arrow.png) no-repeat right center;
+     background-color: #415364  !important;
+
+}
+
+.flex-slider-order-1 .links a:last-child:hover{
+	background: url(https://media.aljhealth.com/wp-content/uploads/2021/03/21142452/new-arrow.png) no-repeat right center;
+    background-color: #394652  !important;
+
+}
+
+
+.flexslider .flex-control-nav li {
+    /*display: block;
+    float: left;*/
+    margin: 0 0 0 7px
+}
+
+.flexslider .flex-control-nav a {
+    box-shadow: none;
+    border-radius: 100px;
+    background-image: none;
+    text-indent: 999px;
+    display: block;
+    width: 11px;
+    height: 11px;
+    overflow: hidden
+}
+
+.flexslider .flex-control-nav a:hover {
+    border-bottom-width: 0
+}
+
+.flexslider .flex-direction-nav a {
+    text-align: left;
+    display: none;
+    float: none;
+    margin-top: -50px;
+    width: 41px;
+    height: 96px
+}
+
+.flexslider .flex-direction-nav a:hover {
+    border-bottom-width: 0
+}
+
+.flexslider .flex-direction-nav .next {
+    /*right: 0;*/
+	left:0;
+}
+
+.flexslider .flex-direction-nav .prev {
+    left: 0;
+}
+.flex-slider-order-2 .prev {
+
+    left: inherit !important;
+    right: 0 !important;
+}
+
+.flex-slider-order-2 .next {
+    left: inherit !important;
+    right: 0 !important;
+}
+
+.flex-slider-order-1 {
+    order: 1;
+}
+.flex-slider-order-2 {
+    order: 2;
+}
+
+.item {
+    background-color: #fbfbfb
+}
+
+.items .item .image .fancybox .hover {
+    background-color: #000
+}
+
+.items .item .main .tags a,
+.items .item .main .tags span {
+    background-color: #d4d4d4
+}
+
+.flexslider .flex-caption {
+    background-color: rgba(0, 0, 0, .3)
+}
+
+.flexslider .flex-control-nav a {
+    background-color: transparent;
+    border: 1px solid #fff;
+}
+
+.flexslider .flex-control-nav .active {
+    background-color: rgba(255, 255, 255, 1)
+}
+.flexslider .flex-direction-nav a {
+    background-image: url(https://media.aljhealth.com/wp-content/uploads/2021/03/21100218/slider-nav.png)
+}
+
+
+
+.insight-news-section .title{
+background: #0f1d2c;
+    padding: 50px 0 25px 0;
+}
+.insight-news-section .title h4{
+    margin: 0;
+}
+
+.insight-news-section .title h3{
+color: #fff;
+	font-size: 36px;
+}
+
+.insight-news{
+    background: #0f1d2c;
+}
+
+
+.insight-news .text{
+    background: #0d233b;
+    height: 100%;
+    padding: 25px;
+    min-height: 475px;
+}
+
+.insight-news .text h6{
+/*    color: #fff;*/
+    margin-bottom: 15px;
+}
+
+.insight-news .text h5{
+/*    color: #fff;*/
+    font-weight: 600;
+    margin-bottom: 35px;
+    font-size: 23px;
+	line-height:28px;
+}
+
+.insight-news p{
+    font-size: 16px;
+    margin-bottom: 25px;
+/*    min-height: 165px;*/
+
+}
+        .home-news-one.text  h6,
+    .home-news-one.text .animated-text h5,
+    .home-news-one.text .animated-text p,
+      .home-news-one.text .animated-text .date{
+           color: #fff;
+    }
+
+
+      .home-news-two.text  h6,
+    .home-news-two.text .animated-text h5,
+    .home-news-two.text .animated-text p,
+      .home-news-two.text .animated-text .date{
+           color: #0d233b;
+    }
+
+
+     /* .home-news-one.text .animated-text a,
+    .home-news-two.text .animated-text a{
+        color: #6ac9ff;
+	background: url(https://media.aljhealth.com/wp-content/uploads/2021/05/04095022/arrow-right.png) no-repeat;
+    background-position: right;
+    padding-right: 16px;
+    background-size: 7px;
+    } */
+
+
+.insight-news .date{
+    color: #fff;
+	font-size: 16px;
+}
+
+.insight-news .links{
+	float: left;
+	position:relative;
+	left:0;
+	bottom:0;
+	width: 100%;
+}
+
+.insight-news .links a{
+background: #3e3b5a url(https://media.aljhealth.com/wp-content/uploads/2021/03/21142452/new-arrow.png) no-repeat right center;
+	color: #fff;
+	text-align: left;
+	text-decoration: none;
+	text-transform: uppercase;
+	padding: 15px;
+	float: left;
+	font-size: 13px;
+	width: 100%;
+}
+
+.insight-news .links a:hover{
+background: #484472 url(https://media.aljhealth.com/wp-content/uploads/2021/03/21142452/new-arrow.png) no-repeat right center;
+}
+
+.insight-news .links a:last-child{
+	background: #524d6f url(https://media.aljhealth.com/wp-content/uploads/2021/03/21142452/new-arrow.png) no-repeat right center;
+
+}
+
+.insight-news .links a:last-child:hover{
+	background: #3e3b5a url(https://media.aljhealth.com/wp-content/uploads/2021/03/21142452/new-arrow.png) no-repeat right center;
+
+}
+
+
+.insight-news .slick-dots{
+left: 0;
+    bottom: 0;
+    width: 100%;
+    right: inherit;
+    text-align: left;
+    background: #ccc;
+    padding: 13px;
+}
+
+	@media (min-width:300px) and (max-width:900px){
+		  .animated-text {height: 325px;}
+		.insight-news .text {min-height:auto;}
+		.flex-direction-nav{display: none;}
+		.insight-news-section .title {padding: 20px 0 10px 0;}
+		.flex-slider-order-2 {order: 1;}
+        .home-insight-news .row {margin-left: 0; margin-right: 0;}
+	}
+
+
+    /* .insight-news .slick-dots,
+    .flex-control-nav {
+        width: 100%;
+        position: absolute;
+        bottom: -30px;
+        text-align: center;
+        padding: 10.5px;
+    } */
+
+    .home-insight-news .slick-track, 
+    .home-insight-news .slick-list{
+        height: 100%;
+    }
+    .home-insight-news .slider-news-1-a  .slick-dots{
+        background-color:rgba(65, 83, 100, 0.8) !important;
+    }
+
+    .home-insight-news .slick-dots{
+        bottom: 0;
+        display: flex;
+        justify-content: center;  
+        background-color: rgba(41, 38, 63, 0.8);
+        position: absolute;
+        padding: 10.5px 0;
+    }
+
+    .home-insight-news .slick-dots li button {
+        background-color: transparent;
+        border: 1px solid #fff;
+        border-radius: 100%;
+    font-size: 0;
+    width: 15px;
+    height: 15px;
+    margin: 0 4px;
+    padding: 0;
+    }
+    .home-insight-news .slick-dots li.slick-active button{
+        background-color: rgba(255, 255, 255, 1);
+    }
+
+
+    .home-insight-news .slick-arrow{
+        /* display: none !important; */
+}
+
+/* .flexslider .flex-direction-nav .prev {
+    left: 0;
+} */
+.home-insight-news .slick-arrow  {
+    background-image: url(https://media.aljhealth.com/wp-content/uploads/2021/03/21100218/slider-nav.png);
+}
+.home-insight-news .slick-arrow  {
+    text-align: left;
+    display: none;
+    float: none;
+    margin-top: -50px;
+    width: 41px;
+    height: 96px;
+    position: absolute;
+   
+    cursor: pointer;
+    text-indent: -999em;
+    left: inherit;
+    /* right: 0; */
+    border: 0;
+    z-index: 9;
+    transform: rotate(180deg);
+   
+
+}
+.home-insight-news .slick-arrow.slick-next{
+    top: 31%;
+    background-position: 0 0;
+}
+.home-insight-news .slick-arrow.slick-prev{
+    
+    background-position: -41px 0;
+
+    top: 50%;
+}
+.home-insight-news  .slider-news-1-a .slick-arrow{
+    left: inherit;
+    right: 0;
+}
+.home-insight-news .slider-news-1-b .slick-arrow{
+    right: inherit;
+    left: 0;
+}
+
+/* .flex-direction-nav li .next {
+    background-position: -41px 0;
+    left: -21px;
+    top: 31%;
+} */
+
+
+@media only screen and (max-width:767px) {
+    .home-insight-news .slick-arrow{
+        display: none !important;
+    }   
+}

@@ -1,0 +1,144 @@
+{
+    "mapwidth": "960",
+    "mapheight": "500",
+    "categories": [],
+    "levels": [
+    {
+    "id": "world",
+    "title": "world",
+    "map":"/maps/locations-map.svg",
+    "locations": [
+    {
+    "id": 4322,
+    "title": "Sydney",
+    "description": "",
+    "x": "0.7017",
+    "y": "0.7480",
+    "pin": "pin-square pin-lg",
+    "label": "https://media.jimco.com/wp-content/uploads/2021/06/27112429/pin.svg",
+    "fill": "transparent"
+    },
+    {
+    "id": 4320,
+    "title": "Singapore",
+    "description": "",
+    "x": "0.4598",
+    "y": "0.6068",
+    "pin": "pin-square pin-lg",
+    "label": "https://media.jimco.com/wp-content/uploads/2021/06/27112429/pin.svg",
+    "fill": "transparent"
+    },
+    {
+    "id": 4318,
+    "title": "Tokyo",
+    "description": "",
+    "x": "0.5330",
+    "y": "0.4993",
+    "pin": "pin-square pin-lg",
+    "label": "https://media.jimco.com/wp-content/uploads/2021/06/27112429/pin.svg",
+    "fill": "transparent"
+    },
+    {
+    "id": 4316,
+    "title": "Chengdu",
+    "description": "",
+    "x": "0.5352",
+    "y": "0.5293",
+    "pin": "pin-square pin-lg",
+    "label": "https://media.jimco.com/wp-content/uploads/2021/06/27112429/pin.svg",
+    "fill": "transparent"
+    },
+    {
+    "id": 4314,
+    "title": "Bangalore",
+    "description": "",
+    "x": "0.6680",
+    "y": "0.3580",
+    "pin": "pin-square pin-lg",
+    "label": "https://media.jimco.com/wp-content/uploads/2021/06/27112429/pin.svg",
+    "fill": "transparent"
+    },
+    {
+    "id": 4311,
+    "title": "Dubai",
+    "description": "",
+    "x": "0.6342",
+    "y": "0.4205",
+    "pin": "pin-square pin-lg",
+    "label": "https://media.jimco.com/wp-content/uploads/2021/06/27112429/pin.svg",
+    "fill": "transparent"
+    },
+    {
+    "id": 4309,
+    "title": "Jeddah",
+    "description": "",
+    "x": "0.0875",
+    "y": "0.7893",
+    "pin": "pin-square pin-lg",
+    "label": "https://media.jimco.com/wp-content/uploads/2021/06/27112429/pin.svg",
+    "fill": "transparent"
+    },
+    {
+    "id": 4307,
+    "title": "Riyadh",
+    "description": "",
+    "x": "0.4486",
+    "y": "0.4143",
+    "pin": "pin-square pin-lg",
+    "label": "https://media.jimco.com/wp-content/uploads/2021/06/27112429/pin.svg",
+    "fill": "transparent"
+    },
+    {
+    "id": 4305,
+    "title": "Istanbul",
+    "description": "",
+    "x": "0.8738",
+    "y": "0.4668",
+    "pin": "pin-square pin-lg",
+    "label": "https://media.jimco.com/wp-content/uploads/2021/06/27112429/pin.svg",
+    "fill": "transparent"
+    },
+    {
+    "id": 4303,
+    "title": "Madrid",
+    "description": "",
+    "x": "0.4643",
+    "y": "0.7668",
+    "pin": "pin-square pin-lg",
+    "label": "https://media.jimco.com/wp-content/uploads/2021/06/27112429/pin.svg",
+    "fill": "transparent"
+    },
+    {
+    "id": 4301,
+    "title": "Monte Carlo",
+    "description": "",
+    "x": "0.5860",
+    "y": "0.6179",
+    "pin": "pin-square pin-lg",
+    "label": "https://media.jimco.com/wp-content/uploads/2021/06/27112429/pin.svg",
+    "fill": "transparent"
+    },
+    {
+    "id": 4299,
+    "title": "London",
+    "description": "",
+    "x": "0.2225",
+    "y": "0.7543",
+    "pin": "pin-square pin-lg",
+    "label": "https://media.jimco.com/wp-content/uploads/2021/06/27112429/pin.svg",
+    "fill": "transparent"
+    },
+    {
+    "id": 4112,
+    "title": "New York",
+    "description": "",
+    "x": "0.1886",
+    "y": "0.4931",
+    "pin": "pin-square pin-lg",
+    "label": "https://media.jimco.com/wp-content/uploads/2021/06/27112429/pin.svg",
+    "fill": "transparent"
+    }
+    ]
+    }
+    ]
+    }

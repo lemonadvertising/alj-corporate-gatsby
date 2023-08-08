@@ -3,6 +3,10 @@ import { graphql } from "gatsby";
 import Layout from '../components/layout';
 import Slider from "react-slick";
 // import { StaticImage } from "gatsby-plugin-image"
+import active_icon from '../common/images/active_icon.png'
+import agreed_icon from '../common/images/agreed_icon.png'
+import oem_icon from '../common/images/oem_icon.png';
+
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
 const Page = (props) => {
   const currentPage = props.data.wpPage;
@@ -28,16 +32,15 @@ const Page = (props) => {
 
             <div className='col-md-12'>
               <Slider {...settings}>
-              {spotlight?.edges.map((el) => (
+                {spotlight?.edges.map((el) => (
                   <div>{
-                    console.log(el.node.spotlights.spotlight, '=====-=-------------=====')
-                    }
+                  }
                     {el.node.spotlights.youtubeVideo == null ?
-                      el.node.spotlights.spotlight.mediaType == "file"?
-                      <video controls autoPlay playsInline>
-                        <source src={el.node.spotlights.spotlight.publicUrl} type="video/mp4"/>
-                      </video>
-                      :
+                      el.node.spotlights.spotlight.mediaType == "file" ?
+                        <video controls autoPlay playsInline>
+                          <source src={el.node.spotlights.spotlight.publicUrl} type="video/mp4" />
+                        </video>
+                        :
                         <img src={el.node.spotlights.spotlight.sourceUrl} alt={el.node.spotlights.spotlight.sourceUrl ? el.node.spotlights.spotlight.sourceUrl : "image"} />
                       :
                       <div>
@@ -54,9 +57,10 @@ const Page = (props) => {
                     }
                   </div>
                 ))
-              }
+                }
               </Slider>
             </div>
+
 
             <div className='col-md-12'>
               <div className='heroSection'>
@@ -65,6 +69,40 @@ const Page = (props) => {
             </div>
             <div className='col-md-12'>
               <div dangerouslySetInnerHTML={{ __html: currentPage.content }} />
+            </div>
+
+            <div className='col-md-12 mt-5'>
+
+              <div class="mapMainWrapper">
+                <div class="map-container">
+                  <div id="mapplic"></div>
+
+                  <ul>
+                    <li><span><img src={active_icon} /></span> <p>Active distribution partnerships</p></li>
+                    <li><span><img src={agreed_icon} /></span>  <p>Agreed distribution territories</p></li>
+                    <li> <span><img src={oem_icon} /></span> <p>OEM solution sources</p></li>
+                  </ul>
+                </div>
+              </div>
+              <div className="map-wrapper">
+                <div className="map-container">
+                  <div id="mapplic" className="mapplic-dark"></div>
+                </div>
+              </div>
+
+              <div className="container">
+                    <div className="row">
+                        <div className="col-md-12">
+                            {/* <div className="mapbx">
+                                <div id="vmap"></div>
+                            </div> */}
+
+
+
+                        </div>
+                    </div>
+                </div>
+
             </div>
           </div>
         </div>
