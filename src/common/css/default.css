@@ -36,6 +36,16 @@ body{
     width: 100%;
     
 }
+.partner-checkbox {
+  margin-bottom: 15px;
+}
+/* .radio-custom {
+  position: absolute;
+} */
+
+.radio-custom-label {
+  margin-left: 10px;
+}
 
 
 .navbar a{

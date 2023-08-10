@@ -107,7 +107,7 @@ exports.createPages = ({ actions, graphql, reporter }) => {
                 }
 
                 let pageTemplate;
-                _.each(result.data.allWpPage.edges, edge => {             
+                _.each(result.data.allWpPage.edges, edge => { 
                     var slug = "/"+langSlugMapping[edge.node.locale.id]+edge.node.slug+"/";
                     pageTemplate = path.resolve("./src/templates/page.js");
                     if (edge.node.slug === "news") {                                       
@@ -120,6 +120,8 @@ exports.createPages = ({ actions, graphql, reporter }) => {
                       pageTemplate = path.resolve("./src/templates/becomePartner.js");
                     } else if (edge.node.slug === "contact-us") {
                       pageTemplate = path.resolve("./src/templates/contactUs.js");
+                    } else if (edge.node.slug == 'partner-portal') {
+                      pageTemplate = path.resolve('./src/templates/partnerPortal.js')
                     } else {
                       pageTemplate = path.resolve("./src/templates/page.js");  
                     }
