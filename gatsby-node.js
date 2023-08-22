@@ -89,6 +89,25 @@ const insightsQuery = `
   } 
 } `
 
+const partnerslistQuery = `
+ {
+  allWpPartner {
+    edges {
+      node {
+        title
+        slug
+        uri
+        id
+        locale {
+          id
+          locale
+        }
+        localizedWpmlUrl
+      }
+    }
+  }
+}`
+
 const wpStyle = `
  {
   wp {
@@ -122,6 +141,8 @@ exports.createPages = ({ actions, graphql, reporter }) => {
                       pageTemplate = path.resolve("./src/templates/contactUs.js");
                     } else if (edge.node.slug == 'partner-portal') {
                       pageTemplate = path.resolve('./src/templates/partnerPortal.js')
+                    } else if (edge.node.slug == 'our-partners') {
+                      pageTemplate = path.resolve('./src/templates/partnersbySolutions.js')
                     } else {
                       pageTemplate = path.resolve("./src/templates/page.js");  
                     }
@@ -217,6 +238,30 @@ exports.createPages = ({ actions, graphql, reporter }) => {
                               lang: edge.node.locale.id
                           },
                       });
+                  });
+                  resolve();
+              });
+        }).then(() => {
+          graphql(partnerslistQuery)
+              .then(result => {
+                  if (result.errors) {
+                      console.log(result.errors);
+                      reject(result.errors);
+                  }
+                  const partnerDetail = path.resolve("./src/templates/partnerDetails.js");
+                  _.each(result.data.allWpPartner.edges, edge => {
+                    console.log(edge.node, '==============================================')
+                      actions.createPage({
+                        path: `/${langSlugMapping['en_US']}partners/${edge.node.slug}/`,
+                        component: slash(partnerDetail),
+                        // context: edge.node
+                        ownerNodeId: edge.node.id,
+                        context: {
+                            id: edge.node.id,
+                            lang: langMapping['en_US'],
+                            langCode: 'en_US'
+                        },
+                    });
                   });
                   resolve();
               });

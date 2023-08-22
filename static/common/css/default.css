@@ -20,3 +20,759 @@ video{
     width: 100%;
     height: 400px;
 }
+
+
+
+
+
+.partner-listing-container {
+    background: #0e1621;
+    padding: 70px 0;
+  }
+  .partner-listing-container h4 {
+    color: #fff;
+    margin-bottom: 25px;
+    font-weight: 300;
+    font-size: 35px;
+  }
+  
+  .partner-listing-box {
+    border: 1px solid #45c5ba;
+    padding: 5px;
+  }
+  
+  .partner-listing-box:hover {
+    border: 1px solid #d71b4b;
+    padding: 5px;
+  }
+  
+  .partner-listing-container .radio-custom {
+    opacity: 0;
+    position: absolute;
+  }
+  
+  .partner-listing-container .radio-custom,
+  .radio-custom-label {
+    display: flex;
+    vertical-align: middle;
+    margin: 0px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 25px;
+  }
+  
+  .partner-listing-container .radio-custom-label {
+    position: relative;
+  }
+  
+  .partner-listing-container .radio-custom + .radio-custom-label:before {
+    /* content: url(https://media.aljhealth.com/wp-content/uploads/2022/06/20092507/uncheck-mark-panter.png); */
+    background: transparent;
+    border: 0;
+    display: inline-block;
+    vertical-align: middle;
+    width: 27px;
+    height: 27px;
+    padding: 0px;
+    margin-right: 20px;
+    text-align: center;
+  }
+  
+  .partner-listing-container .radio-custom + .radio-custom-label:before {
+    border-radius: 0;
+  }
+  
+  .partner-listing-container .radio-custom:checked + .radio-custom-label:before {
+    /* content: url(https://media.aljhealth.com/wp-content/uploads/2022/06/20095250/check-mark-panter2.png); */
+    color: #bbb;
+  }
+  
+  .partner-listing-container .radio-custom:focus + .radio-custom-label {
+    outline: none; /* focus style */
+  }
+  
+  .partner-checkbox {
+    margin-bottom: 20px;
+  }
+  
+  .partner-list-newsinsights .latest-news-insights {
+    background: #fff;
+  }
+  
+  .partner-list-newsinsights .latest-new-all-link a {
+    top: 0;
+  }
+  
+  .partner-list-newsinsights .news_btn {
+    color: #0e1621;
+  }
+  
+  .partner-list-newsinsights .tabs-inactive {
+    color: #c8d2df !important;
+  }
+  
+  .partner-list-newsinsights .insights_btn {
+    color: #0e1621;
+    border-left: 1px solid #0e1621;
+  }
+  
+  .partner-list-newsinsights .latest-news-insights-pagenation-container {
+    /* background: #a4a7ab; */
+    background: #0e1621;
+  }
+  
+  .about-section {
+    padding: 70px 0 0 0;
+  }
+  
+  .about-section .left-img {
+    padding-right: 0;
+  }
+  
+  .about-section .right-img {
+    padding-left: 0;
+  }
+  
+  .home-about-bg {
+    background-size: cover !important;
+    background-position: center center !important;
+  }
+  .about-section-btn a,
+  .our-presence-section a,
+  .investment a,
+  .partner-logo-container a,
+  .featured-partner a,
+  .wo-section a {
+    font-size: 19px;
+    color: #45c5ba;
+    font-weight: 400;
+    /* background: url(https://media.aljhealth.com/wp-content/uploads/2022/07/14090040/about-btn-arrow-red.png)
+      no-repeat right 3px; */
+    background-size: 7px;
+    padding-right: 18px;
+    margin-bottom: 30px;
+  }
+  
+  .wo-section ul,
+  .wo-section ol {
+    margin: 0 0 0 19px;
+    padding: 0;
+    font-weight: 300;
+  }
+  .wo-section li{
+    margin:0;
+    padding: 0;
+    font-weight: 300;
+    list-style: none;
+  }
+  
+  .wo-section li::before {
+    content: "\2022";
+    color: #d71b4b;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+  .wo-section ul,
+  .wo-section ol {
+    margin-bottom: 10px;
+  }
+  
+  .solution-video-containter .modal-body {
+    padding: 0 !important;
+  }
+  
+  .solution-video-containter iframe {
+    float: left !important;
+  }
+  
+  .solution-video-btn {
+    position: relative;
+  }
+  .solution-video-btn .close {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    z-index: 1;
+    background: #fff;
+    opacity: 1;
+    line-height: 9px;
+    padding: 9px;
+  }
+  
+  .modal-dialog.solotion-video-dialog {
+    max-width: 1110px !important;
+  }
+  
+  .our-presence-section a,
+  .investment a,
+  .featured-partner a,
+  .wo-section a {
+    font-weight: 400 !important;
+  }
+  
+  .our-presence-section p {
+    margin-bottom: 0;
+  }
+  
+  .our-presence-section p a,
+  .investment p a,
+  .featured-partner p a,
+  .wo-section p a,
+  .partner-logo-container p a {
+    font-weight: 300 !important;
+    padding-right: 0px !important;
+    margin-bottom: 0px !important;
+    background: none !important;
+  }
+  
+  .about-section .text-first {
+    padding: 0 50px 0 0;
+  }
+  
+  .about-section .text-second {
+    padding: 50px 0 0 50px;
+  }
+  
+  section .text {
+    padding: 50px 0;
+  }
+  section .p {
+    font-weight: 200;
+    font-size: 19px;
+  }
+  .impact-section .text {
+    padding: 50px 0;
+  }
+  .impact-section .text .icon {
+    max-width: 55px;
+    height: auto;
+    margin-right: 10px;
+  }
+  .impact-section .text h5 {
+    color: #45c5ba;
+  }
+  .dotlist ul,
+  .contentbx ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  .dotlist ul li,
+  .newscontent ul li {
+    position: relative;
+    margin: 0 0 15px 15px;
+    padding: 0 !important;
+  }
+  .dotlist ul li::before,
+  .newscontent ul li::before {
+    content: "\2022";
+    font-weight: 700;
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    line-height: 6px;
+    position: absolute;
+    left: -15px;
+    top: 10px;
+  }
+  .dotlist.green ul li::before {
+    color: #45c5ba;
+  }
+  .dotlist.blue ul li::before {
+    color: #1b62b0;
+  }
+  .video-section video {
+    width: 100%;
+    height: auto;
+  }
+  .video-section iframe {
+    width: 100%;
+    height: 800px;
+  }
+  #custom-seekbar {
+    cursor: pointer;
+    height: 7px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    background: #212f38;
+    margin-top: -7px;
+  }
+  #custom-seekbar span {
+    background-color: #6ac9ff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 7px;
+    width: 0px;
+  }
+  .video-section video {
+    outline: none;
+  }
+  .whatwedo-section .text {
+    padding-top: 25px;
+    padding-bottom: 0;
+  }
+  .whatwedo-section .text h5 {
+    margin-top: 25px;
+    margin-bottom: 35px;
+    color: #1b62b0;
+    font-size: 22px;
+  }
+  .ceo-section .bg {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#818588+0,e7e7e7+92,e7e7e7+100 */
+    background: #818588; /* Old browsers */
+    background: -moz-linear-gradient(
+      left,
+      #818588 0%,
+      #e7e7e7 92%,
+      #e7e7e7 100%
+    ); /* FF3.6-15 */
+    background: -webkit-linear-gradient(
+      left,
+      #818588 0%,
+      #e7e7e7 92%,
+      #e7e7e7 100%
+    ); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(
+      to right,
+      #818588 0%,
+      #e7e7e7 92%,
+      #e7e7e7 100%
+    ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#818588', endColorstr='#e7e7e7', GradientType=1 ); /* IE6-9 */
+  }
+  .ceo-section .text {
+    background: #0d223c;
+    color: #fff;
+    padding: 50px;
+  }
+  .ceo-section blockquote {
+    margin: 0 0 1rem;
+    font-size: 22px;
+  }
+  .ceo-section p {
+    font-weight: 400;
+    color: #7aceff;
+  }
+  .ceo-section blockquote:before {
+    content: "";
+    background-image: url(../images/q-top.png);
+    width: 40px;
+    height: 32px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    margin-top: -30px;
+    margin-left: -25px;
+    z-index: -1;
+  }
+  .ceo-section blockquote:after {
+    content: "";
+    background-image: url(../images/q-bottom.png);
+    width: 40px;
+    height: 32px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    margin-top: 30px;
+    z-index: -1;
+  }
+  .ceo-text {
+    position: relative;
+    top: 25px;
+  }
+  .ceo-text p {
+    margin-bottom: 5px;
+  }
+  .oursolution-section .text {
+    padding: 50px 0;
+  }
+  .oursolution-section .text .title {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 25px;
+  }
+  .oursolution-section .text .icon {
+    max-width: 70px;
+    height: auto;
+    margin-right: 10px;
+  }
+  
+  .oursolution-section .text h5 {
+    margin-bottom: 0;
+  }
+  .investment-section {
+    background-color: #f2f2f2;
+  }
+  
+  .solution-details-section .text {
+    padding: 50px 0 0 0;
+  }
+  .africa-section {
+    color: #fff;
+    background-size: cover;
+    background-position: center right;
+    background-attachment: fixed;
+  }
+  .africa-section h4 {
+    color: #fff;
+  }
+  .partner-logo-container {
+    background: #00021b;
+    margin-top: 40px;
+  }
+  
+  .partner-logo-container .gatsby-image-wrapper img {
+  height: auto;
+  }
+  
+  .partner-logo-container p {
+    color: #fff;
+  }
+  .other-partner-logo-container {
+    background: #fff;
+    margin-top: 40px;
+  }
+  img.other-partner-logo {
+    padding: 0 5px 0 10px;
+    display: block;
+    margin: 0 auto;
+  }
+  .partner-section .title {
+    margin-top: 25px;
+    margin-bottom: 0;
+  }
+  .other-partner-section {
+    padding: 50px 0 20px 0;
+  }
+  .other-partner-innerbg{
+    background-color: #0e1621;
+    border: 1px solid #0e1621 !important;
+  } 
+  .other-partner-inner {
+    width: auto;
+    border: 1px solid #56bbff;
+    margin: 0 15px;
+    padding: 5px;
+    border-radius: 0 0 30px 0;
+  }
+  
+  .other-partner-inner:hover {
+    border: 1px solid #d71b4b !important;
+  }
+  .other-partner-section .text {
+    padding: 0;
+  }
+  .other-partner-section h4 {
+    margin-bottom: 0;
+  }
+  .partner-section .title h4 {
+    margin-bottom: 0;
+  }
+  .partner-section .text {
+    padding: 25px;
+    padding-left: 0;
+  }
+  .partner-controller {
+    display: flex;
+    /* width: 50px; */
+    justify-content: space-between;
+    margin-bottom: 0px;
+  }
+  .partner-controller ul li {
+    margin: 0 3px;
+    padding: 0;
+    list-style-type: none;
+    display: inline-block;
+  }
+  .partner-controller ul.slick-dots {
+    margin: 8px 10px 0 10px;
+    padding: 0;
+    line-height: 0;
+  }
+  .partner-controller li button {
+    font-size: 0;
+    width: 11px;
+    height: 14px;
+    border-radius: 100px;
+    border: 1px solid #fff;
+    background: transparent;
+  }
+  
+  .partner-controller li button {
+    border: 1px solid #fff;
+    background: transparent;
+  }
+  .partner-controller li.slick-active button {
+    background: #fff;
+    border: 1px solid #fff;
+  }
+  .partner-controller img {
+    max-width: 12px;
+  }
+  .partner-section .text img {
+    margin-bottom: 25px;
+  }
+  
+  .other-partner-controller {
+    display: flex;
+    /* width: 50px; */
+    justify-content: space-between;
+    margin-bottom: 0px;
+  }
+  
+  .page-404 {
+    /* background-image: url(https://media.aljhealth.com/wp-content/uploads/2021/01/28144149/background-images-header.jpg); */
+    background-size: cover;
+  }
+  
+  .page-404-container ul,
+  .page-404-container li {
+    padding: 0;
+    margin: 0 0 0 20px;
+    list-style-type: disc;
+  }
+  .other-partner-controller ul li {
+    margin: 0 3px;
+    padding: 0;
+    list-style-type: none;
+    display: inline-block;
+  }
+  .other-partner-controller ul.slick-dots {
+    margin: 8px 10px 0 10px;
+    padding: 0;
+    line-height: 0;
+  }
+  .other-partner-controller li button {
+    font-size: 0;
+    width: 11px;
+    height: 14px;
+    border-radius: 100px;
+    /* border: 1px solid #fff; */
+    background: transparent;
+  }
+  
+  .other-partner-controller li button {
+    border: 1px solid #56bbff;
+    background: transparent;
+  }
+  .other-partner-controller li.slick-active button {
+    background: #40e0d0;
+    border: 1px solid #40e0d0;
+  }
+  .other-partner-controller img {
+    max-width: 12px;
+  }
+  .partner-section .slick-slide:focus {
+    outline: none !important;
+  }
+  
+  .latest-news-controller {
+    display: flex;
+    /* width: 50px; */
+    justify-content: space-between;
+    margin-bottom: 0px;
+    position: relative;
+  }
+  .latest-new-all-link a {
+    color: #45c5ba;
+    text-decoration:none;
+    position: absolute;
+    right: 0;
+    /* background: url(https://media.aljhealth.com/wp-content/uploads/2022/07/14090040/about-btn-arrow-red.png) no-repeat right 6px; */
+    padding-right: 20px;
+    background-size: 8px;
+    top: -3px;
+    }
+  .latest-news-controller ul li {
+    margin: 0 3px;
+    padding: 0;
+    list-style-type: none;
+    display: inline-block;
+  }
+  .latest-news-controller ul.slick-dots {
+    margin: 8px 10px 0 10px;
+    padding: 0;
+    line-height: 0;
+  }
+  .latest-news-controller li button {
+    font-size: 0;
+    width: 11px;
+    height: 14px;
+    border-radius: 100px;
+    border: 1px solid #fff;
+    background: transparent;
+  }
+  
+  .arabic_lang a {
+    font-family: Luma !important;
+    font-weight: 400 !important;
+  }
+  
+  .search-pagination ul {
+    margin: 30px 0 0 0;
+    padding: 0;
+  }
+  
+  .validations-error {
+    background: #ecacac !important;
+  }
+  .checkbox-error {
+    color: #ecacac !important;
+    display: block;
+  }
+  
+  .search-pagination li {
+    margin: 0 20px 20px 0;
+    display: inline-block;
+    color: #fff;
+  }
+  
+  .search-pagination li a {
+    /* color: #fff !important; */
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 15px;
+    font-size: 20px;
+    border-radius: 5px;
+    font-weight: 300;
+    background: #51cec7;
+  }
+   .search-pagination li a:hover, .search-pagination li a.active {
+    color: #fff !important;
+    background: #0f1d2c;
+  } 
+  
+  .overlay-menu-bg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #33b6dd;
+    opacity: .6;
+  }
+  
+  
+  .search-scroll {
+    overflow: auto;
+    overflow-x: hidden;
+    height: 550px;
+    padding: 0 50px 0 0;
+    margin: 0;
+  }
+  
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  
+  .search-result {
+    font-weight: 300;
+  }
+  
+  .search-result a {
+    display: block;
+    font-size: 26px;
+    line-height: 31px;
+    font-weight: 200;
+    color: #000;
+  }
+  
+  .search-pagination li:last-child {
+    margin-right: 0 !important;
+  }
+  
+  .about-solutions-container{
+    background: #0e233a;
+    text-align: center;
+    margin-top: 0px;
+  }
+  .about-solutions-container h4{
+    color: #fff;
+    margin-bottom:0px;
+    text-align: left;
+  }
+  
+  .about-solutions-container .slick-prev {
+    left: 0px;
+    top: 35%;
+    position: absolute;
+    -webkit-transform: translateY(-35%);
+    transform: translateY(-35%);
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    font-size: 0;
+    line-height: 0;
+    z-index: 1;
+    /* background: url(https://media.aljhealth.com/wp-content/uploads/2022/06/09071208/prev-arrow-white.png) no-repeat left center; */
+    border: none;
+  }
+  
+  .about-solutions-container .slick-next {
+    right:0;
+    top: 35%;
+    position: absolute;
+    -webkit-transform: translateY(-35%);
+    transform: translateY(-35%);
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    font-size: 0;
+    line-height: 0;
+    z-index: 1;
+    /* background: url(https://media.aljhealth.com/wp-content/uploads/2022/06/09071207/next-arrow-white.png) no-repeat right center; */
+    border: none;
+  }
+  
+  .about-solutions-container h6{
+    color: #5fb3e2;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+  }
+  
+  .about-solutions-container .about-solution-inner{
+  text-align: center;
+  height:180px;
+  padding: 25px 15px;
+  margin: 0 20px;
+  }
+  
+  .about-solutions-container .about-solution-inner:hover{
+    background-color: #213245;
+  }
+  
+  .about-solution-title{
+  display: none;
+  }
+  .about-solution-inner:hover .about-solution-title{
+    display: block !important;
+  }
+  
+  
+  .about-solutions-container .slick-slide img { 
+  width: 60px;
+  display: inline;
+  margin-bottom: 10px;
+  } 
