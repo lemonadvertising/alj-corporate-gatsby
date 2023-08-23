@@ -241,31 +241,32 @@ exports.createPages = ({ actions, graphql, reporter }) => {
                   });
                   resolve();
               });
-        }).then(() => {
-          graphql(partnerslistQuery)
-              .then(result => {
-                  if (result.errors) {
-                      console.log(result.errors);
-                      reject(result.errors);
-                  }
-                  const partnerDetail = path.resolve("./src/templates/partnerDetails.js");
-                  _.each(result.data.allWpPartner.edges, edge => {
-                    console.log(edge.node, '==============================================')
-                      actions.createPage({
-                        path: `/${langSlugMapping['en_US']}partners/${edge.node.slug}/`,
-                        component: slash(partnerDetail),
-                        // context: edge.node
-                        ownerNodeId: edge.node.id,
-                        context: {
-                            id: edge.node.id,
-                            lang: langMapping['en_US'],
-                            langCode: 'en_US'
-                        },
-                    });
-                  });
-                  resolve();
-              });
         })
+        // .then(() => {
+        //   graphql(partnerslistQuery)
+        //       .then(result => {
+        //           if (result.errors) {
+        //               console.log(result.errors);
+        //               reject(result.errors);
+        //           }
+        //           const partnerDetail = path.resolve("./src/templates/partnerDetails.js");
+        //           _.each(result.data.allWpPartner.edges, edge => {
+        //             console.log(edge.node, '==============================================')
+        //               actions.createPage({
+        //                 path: `/${langSlugMapping['en_US']}partners/${edge.node.slug}/`,
+        //                 component: slash(partnerDetail),
+        //                 // context: edge.node
+        //                 ownerNodeId: edge.node.id,
+        //                 context: {
+        //                     id: edge.node.id,
+        //                     lang: langMapping['en_US'],
+        //                     langCode: 'en_US'
+        //                 },
+        //             });
+        //           });
+        //           resolve();
+        //       });
+        // })
           .then(() => {
             graphql(wpStyle)
                 .then(result => {
