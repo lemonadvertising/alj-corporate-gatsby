@@ -174,11 +174,11 @@ exports.createPages = ({ actions, graphql, reporter }) => {
                       const postTemplate = path.resolve("./src/templates/newsDetails.js");
                       _.each(result.data.allWpPressrelease.edges, edge => {
                           if (edge.node.locale.id === "en_US") {
-                              actions.createRedirect({ fromPath: '/news/' + edge.node.slug, toPath: edge.node.localizedWpmlUrl, redirectInBrowser: true, isPermanent: true })
-                              actions.createRedirect({ fromPath: '/news/' + edge.node.slug + "/", toPath: edge.node.localizedWpmlUrl, redirectInBrowser: true, isPermanent: true })
+                              actions.createRedirect({ fromPath: '/press-release/' + edge.node.slug, toPath: edge.node.localizedWpmlUrl, redirectInBrowser: true, isPermanent: true })
+                              actions.createRedirect({ fromPath: '/press-release/' + edge.node.slug + "/", toPath: edge.node.localizedWpmlUrl, redirectInBrowser: true, isPermanent: true })
                           }
                           actions.createPage({
-                              path: `/${langSlugMapping[edge.node.locale.id]}news/${edge.node.slug}/`,
+                              path: `/${langSlugMapping[edge.node.locale.id]}press-release/${edge.node.slug}/`,
                               component: slash(postTemplate),
                               ownerNodeId: edge.node.id,
                               context: {
@@ -226,11 +226,11 @@ exports.createPages = ({ actions, graphql, reporter }) => {
                   const postTemplate = path.resolve("./src/templates/insightsDetails.js");
                   _.each(result.data.allWpPerspective.edges, edge => {
                       if (edge.node.locale.id === "en_US") {
-                          actions.createRedirect({ fromPath: '/insights/' + edge.node.slug, toPath: edge.node.localizedWpmlUrl, redirectInBrowser: true, isPermanent: true })
-                          actions.createRedirect({ fromPath: '/insights/' + edge.node.slug + "/", toPath: edge.node.localizedWpmlUrl, redirectInBrowser: true, isPermanent: true })
+                          actions.createRedirect({ fromPath: '/perspective/' + edge.node.slug, toPath: edge.node.localizedWpmlUrl, redirectInBrowser: true, isPermanent: true })
+                          actions.createRedirect({ fromPath: '/perspective/' + edge.node.slug + "/", toPath: edge.node.localizedWpmlUrl, redirectInBrowser: true, isPermanent: true })
                       }
                       actions.createPage({
-                          path: `/${langSlugMapping[edge.node.locale.id]}insights/${edge.node.slug}/`,
+                          path: `/${langSlugMapping[edge.node.locale.id]}perspective/${edge.node.slug}/`,
                           component: slash(postTemplate),
                           ownerNodeId: edge.node.id,
                           context: {
