@@ -44,7 +44,7 @@ const PartnerDetailsPage = (props) => {
 
     return (
         <React.Fragment>
-            <Layout translations={currentPage.translated} lang={currentPage.locale.id} location={props.location} 
+            <Layout translations={currentPage.translated} lang='en_US' location={props.location} 
             
             // seoTitle={currentPage.seo.opengraphTitle ? currentPage.seo.opengraphTitle : decode(currentPage.title).replace(/(<([^>]+)>)/gi, "")}
             
@@ -81,7 +81,7 @@ const PartnerDetailsPage = (props) => {
                             <img src="https://media.aljhealth.com/wp-content/uploads/2020/12/28082150/hero-transparent.png" className="slider-transparent img-fluid slider-transparent-img" alt="hero-transparent" />
                             <div className="container">
                                 <div className="text">
-                                    <p className="heading wow fadeIn animated">{SiteTrans.our_partners_label[currentPage.locale.id]}</p>
+                                    <p className="heading wow fadeIn animated">{SiteTrans.our_partners_label['en_US']}</p>
                                     <div className="d-flex align-items-center">
                                         {currentPage.our_people_fields.partnerIcon.sourceUrl ?
                                             <img className="img-fluid" src={currentPage.our_people_fields.partnerIcon !== null ? currentPage.our_people_fields.partnerIcon.sourceUrl : ''} alt="img" />
@@ -152,10 +152,10 @@ const PartnerDetailsPage = (props) => {
                         <div className="row">
                             <div className="col-md-12">
                                 <div className="mt-5">
-                                    <h4>{SiteTrans.solutions_section_heading[currentPage.locale.id]}</h4>
+                                    <h4>{SiteTrans.solutions_section_heading['en_US']}</h4>
                                 </div>
                                 <SolutionsListingAbout
-                                    lang={currentPage.locale.id}
+                                    lang='en_US'
                                     solution_id={currentPage.id}
                                     allWpSolution={allWpSolution} />
                             </div>
