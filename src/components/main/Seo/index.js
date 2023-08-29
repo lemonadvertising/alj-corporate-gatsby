@@ -3,6 +3,7 @@ import {Helmet} from "react-helmet";
 export default function Seo({title, description, image}) {
   return (
     <>
+    {console.log(image,'***********************************************')}
           <Helmet>
                 <meta charset="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,7 +12,7 @@ export default function Seo({title, description, image}) {
                 <meta name="Keywords" content="" />
                 <meta name="Description" content={description?description:""} />
                 <meta property="og:image" content={image?image:"../../common/images/meta/favicon.ico"} />
-                <meta property="og:image:type" content="image/*" />
+                <meta property="og:image:type" content="image/jpg" />
                 <meta property="og:image:width" content="436" />
                 <meta property="og:image:height" content="228" />
                 <meta property="og:title" content={title?title:""} />
