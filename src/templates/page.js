@@ -16,7 +16,9 @@ const Page = (props) => {
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    autoplay:true,
+    preload:'no'
   };
   return (
     <>
@@ -37,7 +39,7 @@ const Page = (props) => {
                   }
                     {el.node.spotlights.youtubeVideo == null ?
                       el.node.spotlights.spotlight.mediaType == "file" ?
-                        <video controls autoPlay playsInline>
+                        <video autoPlay muted playsInline>
                           <source src={el.node.spotlights.spotlight.publicUrl} type="video/mp4" />
                         </video>
                         :
@@ -120,6 +122,7 @@ export const painPage = graphql`
       id 
       featuredImage {
         node {
+          sourceUrl
           gatsbyImage(width: 1320, placeholder: BLURRED)
           altText
         }

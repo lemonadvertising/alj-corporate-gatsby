@@ -93,6 +93,7 @@ useEffect(() => handleComponentMounted(), []);
       description={description?description:layoutData.wp.generalSettings.description}
       image={image?image:""}
       />
+      {console.log(image, '======================================')}
       <Header />
       <div className="mainWrapper">
       <main style={{minHeight:500, paddingBottom:100}}>{children}</main>

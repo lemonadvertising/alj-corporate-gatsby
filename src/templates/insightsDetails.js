@@ -58,6 +58,7 @@ export const wpNewsPage = graphql`
         node {
           gatsbyImage(width: 730, placeholder: BLURRED)
           altText
+          sourceUrl
         }
       }
       locale {

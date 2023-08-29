@@ -22,6 +22,9 @@ const Page = (props) => {
     description={currentPage.seo.opengraphDescription?currentPage.seo.opengraphDescription:null}
     image={currentPage.featuredImage.node.sourceUrl?currentPage.featuredImage.node.sourceUrl:null}
     >
+      {
+        console.log(currentPage.featuredImage, '--------------------------------')
+      }
 
        <div className='container'>
         <div className='row'>      
@@ -69,6 +72,7 @@ export const wpNewsPage = graphql`
         node {
           gatsbyImage(width: 1100, placeholder: BLURRED)
           altText
+          sourceUrl
         }
       }
       locale {
