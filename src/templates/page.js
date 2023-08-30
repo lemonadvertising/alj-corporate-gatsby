@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { graphql } from "gatsby";
 import Layout from '../components/layout';
 import Slider from "react-slick";
@@ -11,15 +11,43 @@ import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
 const Page = (props) => {
   const currentPage = props.data.wpPage;
   const spotlight = props.data.allWpSpotlight;
+
+  const sliderRef = useRef(null);
+
+  const playVideo = (videoId) => {
+    if(document.getElementById(videoId) != null){
+      const video = document.getElementById(videoId);
+      video.play();
+    }
+  };
+
+  const pauseVideo = (videoId) => {
+    console.log(videoId, '====')
+    if(document.getElementById(videoId) != null){
+      const video = document.getElementById(videoId);
+      video.pause();
+    }
+  };
+
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay:true,
-    preload:'no'
+    autoplay:false,
+    preload:'no',
+    // Your Slick Slider settings here
+    beforeChange: (oldIndex, newIndex) => {
+      // Pause the video when sliding away from a slide
+      pauseVideo(`video${oldIndex + 1}`);
+    },
+    afterChange: (currentIndex) => {
+      // Play the video when sliding to a slide
+      playVideo(`video${currentIndex + 1}`);
+    },
   };
+
   return (
     <>
       <Layout
@@ -33,13 +61,13 @@ const Page = (props) => {
           <div className='row'>
 
             <div className='col-md-12'>
-              <Slider {...settings}>
-                {spotlight?.edges.map((el) => (
-                  <div>{
-                  }
+              <Slider ref={sliderRef} {...settings}>
+                {spotlight?.edges.map((el, newIndex) => (
+                  <div>
                     {el.node.spotlights.youtubeVideo == null ?
                       el.node.spotlights.spotlight.mediaType == "file" ?
-                        <video autoPlay muted playsInline>
+                      
+                        <video id={`video${newIndex+1}`} autoplay muted>
                           <source src={el.node.spotlights.spotlight.publicUrl} type="video/mp4" />
                         </video>
                         :
