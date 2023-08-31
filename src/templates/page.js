@@ -15,18 +15,13 @@ const Page = (props) => {
   const sliderRef = useRef(null);
 
   const playVideo = (videoId) => {
-    if(document.getElementById(videoId) != null){
-      const video = document.getElementById(videoId);
-      video.play();
-    }
+    const video = document.getElementById(videoId);
+    video.play();
   };
 
   const pauseVideo = (videoId) => {
-    console.log(videoId, '====')
-    if(document.getElementById(videoId) != null){
-      const video = document.getElementById(videoId);
-      video.pause();
-    }
+    const video = document.getElementById(videoId);
+    video.pause();
   };
 
   const settings = {
@@ -40,11 +35,17 @@ const Page = (props) => {
     // Your Slick Slider settings here
     beforeChange: (oldIndex, newIndex) => {
       // Pause the video when sliding away from a slide
-      pauseVideo(`video${oldIndex + 1}`);
+      console.log(spotlight?.edges[oldIndex].node.spotlights.spotlight.mimeType, '======')
+      if(spotlight?.edges[oldIndex].node.spotlights.spotlight.mimeType == "video/mp4"){
+        pauseVideo(`video${oldIndex}`);
+      }
     },
     afterChange: (currentIndex) => {
       // Play the video when sliding to a slide
-      playVideo(`video${currentIndex + 1}`);
+      console.log(spotlight?.edges[currentIndex].node.spotlights.spotlight.mimeType, '----', currentIndex)
+      if(spotlight?.edges[currentIndex].node.spotlights.spotlight.mimeType == "video/mp4"){
+        playVideo(`video${currentIndex}`);
+      }
     },
   };
 
@@ -63,12 +64,12 @@ const Page = (props) => {
             <div className='col-md-12'>
               <Slider ref={sliderRef} {...settings}>
                 {spotlight?.edges.map((el, newIndex) => (
-                  <div>
+                  <div>{
+                  }
                     {el.node.spotlights.youtubeVideo == null ?
                       el.node.spotlights.spotlight.mediaType == "file" ?
-                      
-                        <video id={`video${newIndex+1}`} autoplay muted>
-                          <source src={el.node.spotlights.spotlight.publicUrl} type="video/mp4" />
+                        <video id={`video${newIndex}`} controls src={el.node.spotlights.spotlight.publicUrl} type="video/mp4">
+                          {/* <source  /> */}
                         </video>
                         :
                         <img src={el.node.spotlights.spotlight.sourceUrl} alt={el.node.spotlights.spotlight.sourceUrl ? el.node.spotlights.spotlight.sourceUrl : "image"} />
@@ -177,6 +178,7 @@ export const painPage = graphql`
             spotlight {
               sourceUrl
               mediaType
+              mimeType
               publicUrl
             }
             youtubeVideo

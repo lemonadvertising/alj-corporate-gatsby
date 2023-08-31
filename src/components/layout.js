@@ -84,7 +84,7 @@ useEffect(() => handleComponentMounted(), []);
       <Script src="/js/slick.min.js" onLoad={() => setLoaded(true)} />
       <Script src="/js/owl.carousel.min.js" onLoad={() => setLoaded(true)} />
       <Script src="/main.js" onLoad={() => setLoaded(true)} />
-      {loaded && <Script src="/js/default.js" />}                            
+      {loaded && <Script src="/js/default.js" />}
       <Helmet>
       {lang === "ar" ? <body className="arabic" /> : <body className="english" />}          
        </Helmet>
@@ -93,7 +93,6 @@ useEffect(() => handleComponentMounted(), []);
       description={description?description:layoutData.wp.generalSettings.description}
       image={image?image:""}
       />
-      {console.log(image, '======================================')}
       <Header />
       <div className="mainWrapper">
       <main style={{minHeight:500, paddingBottom:100}}>{children}</main>

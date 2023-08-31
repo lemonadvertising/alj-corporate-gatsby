@@ -147,7 +147,7 @@ const PartnerDetailsPage = (props) => {
                     </div>
                 </section> */}
                 {/***********************Solution Listing Section**********************/}
-                <section className="what-we-do-solutions section about-solutions-container">
+                {/* <section className="what-we-do-solutions section about-solutions-container">
                     <div className="container">
                         <div className="row">
                             <div className="col-md-12">
@@ -161,7 +161,7 @@ const PartnerDetailsPage = (props) => {
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> */}
                 {/***********************End Solution Listing Section**********************/}
             </Layout>
         </React.Fragment>

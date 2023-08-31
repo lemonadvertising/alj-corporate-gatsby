@@ -45,18 +45,16 @@ const SolutionsListingAbout = (props) => {
     };
     return (
         <>
-            <Slider {...settings}>
+            {/* <Slider {...settings}>
                 {solutionslistingdata.map(item => (
                     <div>
                         <a href={item.node.localizedWpmlUrl}>
                             <div className="about-solution-inner">
-                                {/* {item.node.our_solution_custom_fields.icon && item.node.our_solution_custom_fields.icon.sourceUrl ?
-                                    <img src={item.node.our_solution_custom_fields.icon !== null ? item.node.our_solution_custom_fields.icon.sourceUrl : ''} alt="img" />
-                                : null} */}
+                                {console.log(item.node.press_release_acf)}
 
 <div className="about-solution-inner-img">
-{item.node.our_solution_custom_fields.icon && item.node.our_solution_custom_fields.icon.sourceUrl ?
-                                    <img src={item.node.our_solution_custom_fields.icon.sourceUrl} alt={"img"} />      
+{item.node.press_release_acf.icon && item.node.press_release_acf.icon.sourceUrl ?
+                                    <img src={item.node.press_release_acf.icon.sourceUrl} alt={"img"} />      
                                     :null}                                                                              
 </div>
 
@@ -65,7 +63,7 @@ const SolutionsListingAbout = (props) => {
                         </a>
                     </div>
                 ))}
-            </Slider>
+            </Slider> */}
         </>
     )
 }

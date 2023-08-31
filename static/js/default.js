@@ -77,7 +77,3 @@ $(document).ready(function() {
 //     $('#videoframe').attr('src', "");
 // });
 
-
-
-
-console.log("zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz")
