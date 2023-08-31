@@ -68,7 +68,7 @@ const Page = (props) => {
                   }
                     {el.node.spotlights.youtubeVideo == null ?
                       el.node.spotlights.spotlight.mediaType == "file" ?
-                        <video id={`video${newIndex}`} controls src={el.node.spotlights.spotlight.publicUrl} type="video/mp4">
+                        <video id={`video${newIndex}`} autoPlay muted src={el.node.spotlights.spotlight.publicUrl} type="video/mp4">
                           {/* <source  /> */}
                         </video>
                         :
