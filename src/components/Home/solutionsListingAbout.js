@@ -15,55 +15,29 @@ const SolutionsListingAbout = (props) => {
         dots: false,
         infinite: true,
         speed: 500,
-        slidesToShow: 5,
+        slidesToShow: 1,
         slidesToScroll: 1,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true,
-                    dots: false
-                }
-            }, {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    initialSlide: 2
-                }
-            }, {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-        ]
-
+        variableWidth:true
     };
     return (
         <>
-            {/* <Slider {...settings}>
+            <Slider {...settings}>
                 {solutionslistingdata.map(item => (
                     <div>
-                        <a href={item.node.localizedWpmlUrl}>
                             <div className="about-solution-inner">
                                 {console.log(item.node.press_release_acf)}
 
 <div className="about-solution-inner-img">
-{item.node.press_release_acf.icon && item.node.press_release_acf.icon.sourceUrl ?
-                                    <img src={item.node.press_release_acf.icon.sourceUrl} alt={"img"} />      
+{item.node.press_release_acf.icon20x20 && item.node.press_release_acf.icon20x20.sourceUrl ?
+                                    <img src={item.node.press_release_acf.icon20x20.sourceUrl} alt={"img"} />      
                                     :null}                                                                              
 </div>
 
                                 <h6 className="about-solution-title">{item.node.title}</h6>
                             </div>
-                        </a>
                     </div>
                 ))}
-            </Slider> */}
+            </Slider>
         </>
     )
 }

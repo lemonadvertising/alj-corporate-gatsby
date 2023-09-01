@@ -10,6 +10,7 @@ import {graphql} from "gatsby";
 import $ from 'jquery';
 // import {GatsbySeo} from 'gatsby-plugin-next-seo';
 import {decode} from 'html-entities';
+import NewsInsightsSolution from '../components/Solutions/newsInsightsSolution';
 import SolutionsListingAbout from '../components/Home/solutionsListingAbout';
 import SiteTrans from "../components/LangConfig/siteTrans.json";
 
@@ -39,12 +40,14 @@ const PartnerDetailsPage = (props) => {
 
     const currentPage = props.data.wpPartner;
     const allWpSolution = props.data.allWpSolution.edges
-    console.log(props.data, '----------------------------------------------')
+    // const allWpPressreleaseNews = props.data.allWpPressrelease.edges
+    // const allWpPerspectiveNews = props.data.allWpPerspective.edges
+    console.log(currentPage, '----------------------------------------------')
     const clickHandler = (e) => {}
 
     return (
         <React.Fragment>
-            <Layout translations={currentPage.translated} lang='en_US' location={props.location} 
+            <Layout translations={currentPage.translated} lang={currentPage.locale.id} location={props.location} 
             
             // seoTitle={currentPage.seo.opengraphTitle ? currentPage.seo.opengraphTitle : decode(currentPage.title).replace(/(<([^>]+)>)/gi, "")}
             
@@ -81,7 +84,7 @@ const PartnerDetailsPage = (props) => {
                             <img src="https://media.aljhealth.com/wp-content/uploads/2020/12/28082150/hero-transparent.png" className="slider-transparent img-fluid slider-transparent-img" alt="hero-transparent" />
                             <div className="container">
                                 <div className="text">
-                                    <p className="heading wow fadeIn animated">{SiteTrans.our_partners_label['en_US']}</p>
+                                    <p className="heading wow fadeIn animated">{SiteTrans.our_partners_label[currentPage.locale.id]}</p>
                                     <div className="d-flex align-items-center">
                                         {currentPage.our_people_fields.partnerIcon.sourceUrl ?
                                             <img className="img-fluid" src={currentPage.our_people_fields.partnerIcon !== null ? currentPage.our_people_fields.partnerIcon.sourceUrl : ''} alt="img" />
@@ -135,6 +138,12 @@ const PartnerDetailsPage = (props) => {
                     </div>
                 </section>
 
+                {/***********************News & Insight Section**********************/}
+                {/* <div className="partner-list-newsinsights">
+                    <NewsInsightsSolution lang={currentPage.locale.id} allWpPressreleaseNews={allWpPressreleaseNews} allWpPerspectiveNews={allWpPerspectiveNews} />
+                </div> */}
+                {/***********************End News & Insight Section**********************/}
+
                 {/* <section className="solution-details-section mb-5 mt-5">
                     <div className="container">
                         <div className="row">
@@ -147,21 +156,21 @@ const PartnerDetailsPage = (props) => {
                     </div>
                 </section> */}
                 {/***********************Solution Listing Section**********************/}
-                {/* <section className="what-we-do-solutions section about-solutions-container">
+                <section className="what-we-do-solutions section about-solutions-container">
                     <div className="container">
                         <div className="row">
                             <div className="col-md-12">
                                 <div className="mt-5">
-                                    <h4>{SiteTrans.solutions_section_heading['en_US']}</h4>
+                                    <h4>{SiteTrans.solutions_section_heading[currentPage.locale.id]}</h4>
                                 </div>
                                 <SolutionsListingAbout
-                                    lang='en_US'
+                                    lang={currentPage.locale.id}
                                     solution_id={currentPage.id}
                                     allWpSolution={allWpSolution} />
                             </div>
                         </div>
                     </div>
-                </section> */}
+                </section>
                 {/***********************End Solution Listing Section**********************/}
             </Layout>
         </React.Fragment>
@@ -228,8 +237,58 @@ export const PartnerDetailsPageQuery = graphql `
             title
             link
             localizedWpmlUrl
+            press_release_acf {
+              icon20x20 {
+                altText
+                sourceUrl
+              }
+              shortDescription
+            }
           }
         }
+      }
+
+      allWpPressrelease( filter: {press_release_acf: {}, locale: {id: {eq: $langCode}}, status: {eq: "publish"}}  sort: {fields: date, order: DESC}  limit: 10  ) {
+        totalCount
+        edges {
+            node {
+                press_release_acf {
+                    shortTitle
+                    summary
+                    location
+            
+                }
+                date(formatString: "MMMM D, Y")
+                slug
+                featuredImage {
+                    node {
+                        sourceUrl
+                    }
+                }
+                localizedWpmlUrl
+            }
+        }
+      }
+    
+      allWpPerspective(filter: {press_release_acf: {}, locale: {id: {eq: $langCode}}, status: {eq: "publish"}}sort: {fields: date, order: DESC} limit: 10 ) {
+          totalCount
+          edges {
+              node {
+                  press_release_acf {
+                      shortTitle
+                      summary
+                      location
+                  }
+                  date(formatString: "MMMM D, Y")
+                  slug
+                  featuredImage {
+                      node {
+                          sourceUrl
+                      }
+                  }
+                  localizedWpmlUrl
+              }
+          }
       }
     }
 `

@@ -121,7 +121,6 @@ const Footer = (props) => {
 
       axios(config)
         .then(function (response) {
-          // console.log(JSON.stringify(response.data));
           // recaptchaInstance.reset();
           setFormState({
             ...formState,
@@ -148,7 +147,6 @@ const Footer = (props) => {
           });
         })
         .catch(function (error) {
-          // console.log(error);
           // recaptchaInstance.reset();
           setFormState({
             ...formState,
