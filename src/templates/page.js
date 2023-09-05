@@ -57,11 +57,12 @@ const Page = (props) => {
         description={currentPage.seo.opengraphDescription ? currentPage.seo.opengraphDescription : null}
         image={currentPage.featuredImage.node.sourceUrl ? currentPage.featuredImage.node.sourceUrl : null}
       >
-
+        
         <div className='container'>
           <div className='row'>
 
             <div className='col-md-12'>
+<<<<<<< HEAD
               <Slider ref={sliderRef} {...settings}>
                 {spotlight?.edges.map((el, newIndex) => (
                   <div>{
@@ -73,6 +74,14 @@ const Page = (props) => {
                         </video>
                         :
                         <img src={el.node.spotlights.spotlight.sourceUrl} alt={el.node.spotlights.spotlight.sourceUrl ? el.node.spotlights.spotlight.sourceUrl : "image"} />
+=======
+              <Slider {...settings}>
+              {spotlight.edges.map((el) => (
+                  <div>
+                    {el.node.spotlights.youtubeVideo == null ?
+                      // <img src={el.node.spotlights.spotlight.sourceUrl} alt={el.node.spotlights.spotlight.sourceUrl ? el.node.spotlights.spotlight.sourceUrl : "image"} />
+                      null
+>>>>>>> dev
                       :
                       <div>
                         <iframe
