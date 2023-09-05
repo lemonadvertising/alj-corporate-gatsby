@@ -11,7 +11,7 @@ export default function Seo({title, description, image}) {
                 <title>{title?title:"website"}</title>
                 <meta name="Keywords" content="" />
                 <meta name="Description" content={description?description:""} />
-                <meta property="og:image" content="../../common/images/meta/favicon.ico" />
+                <meta property="og:image" content={image} />
                 <meta property="og:image:type" content="image/x-icon" />
                 <meta property="og:image:width" content="436" />
                 <meta property="og:image:height" content="228" />

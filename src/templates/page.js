@@ -1,3 +1,4 @@
+
 import React, { useRef } from 'react'
 import { graphql } from "gatsby";
 import Layout from '../components/layout';
@@ -189,3 +190,6 @@ export const painPage = graphql`
   }
 `;
 
+// apps-fileview.texmex_20230817.01_p1
+// page.js
+// Displaying page.js.
