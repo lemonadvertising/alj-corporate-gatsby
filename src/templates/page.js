@@ -22,16 +22,17 @@ const Page = (props) => {
         description={currentPage.seo.opengraphDescription ? currentPage.seo.opengraphDescription : null}
         image={currentPage.featuredImage.node.sourceUrl ? currentPage.featuredImage.node.sourceUrl : null}
       >
-
+        
         <div className='container'>
           <div className='row'>
 
             <div className='col-md-12'>
               <Slider {...settings}>
-              {spotlight?.edges.map((el) => (
+              {spotlight.edges.map((el) => (
                   <div>
                     {el.node.spotlights.youtubeVideo == null ?
-                      <img src={el.node.spotlights.spotlight.sourceUrl} alt={el.node.spotlights.spotlight.sourceUrl ? el.node.spotlights.spotlight.sourceUrl : "image"} />
+                      // <img src={el.node.spotlights.spotlight.sourceUrl} alt={el.node.spotlights.spotlight.sourceUrl ? el.node.spotlights.spotlight.sourceUrl : "image"} />
+                      null
                       :
                       <div>
                         <iframe
@@ -75,6 +76,7 @@ export const painPage = graphql`
       id 
       featuredImage {
         node {
+          sourceUrl
           gatsbyImage(width: 1320, placeholder: BLURRED)
           altText
         }
