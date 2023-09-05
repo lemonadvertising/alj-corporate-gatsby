@@ -40,8 +40,8 @@ const PartnerDetailsPage = (props) => {
 
     const currentPage = props.data.wpPartner;
     const allWpSolution = props.data.allWpSolution.edges
-    // const allWpPressreleaseNews = props.data.allWpPressrelease.edges
-    // const allWpPerspectiveNews = props.data.allWpPerspective.edges
+    const allWpPressreleaseNews = props.data.allWpPressrelease.edges
+    const allWpPerspectiveNews = props.data.allWpPerspective.edges
     console.log(currentPage, '----------------------------------------------')
     const clickHandler = (e) => {}
 
@@ -139,9 +139,9 @@ const PartnerDetailsPage = (props) => {
                 </section>
 
                 {/***********************News & Insight Section**********************/}
-                {/* <div className="partner-list-newsinsights">
+                <div className="partner-list-newsinsights">
                     <NewsInsightsSolution lang={currentPage.locale.id} allWpPressreleaseNews={allWpPressreleaseNews} allWpPerspectiveNews={allWpPerspectiveNews} />
-                </div> */}
+                </div>
                 {/***********************End News & Insight Section**********************/}
 
                 {/* <section className="solution-details-section mb-5 mt-5">

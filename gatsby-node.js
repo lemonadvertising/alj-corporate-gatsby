@@ -259,8 +259,8 @@ exports.createPages = ({ actions, graphql, reporter }) => {
                         ownerNodeId: edge.node.id,
                         context: {
                             id: edge.node.id,
-                            lang: langMapping['en_US'],
-                            langCode: 'en_US'
+                            lang: langMapping[edge.node.locale.id],
+                            langCode: edge.node.locale.id
                         },
                     });
                   });

@@ -37,7 +37,7 @@ export default function Header() {
       <Link to="/en/become-a-partner"> Become a Partner </Link> &nbsp; &nbsp;
       </li>
       <li className="nav-item">
-      <Link to='/en/partner-portal'> Partner Portal </Link> &nbsp; &nbsp;
+      <Link to='/en/our-partners'> Partner Portal </Link> &nbsp; &nbsp;
       </li>
       
       <li className="nav-item">

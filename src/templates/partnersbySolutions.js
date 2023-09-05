@@ -13,7 +13,7 @@ const PartnersbySolutions = (props) => {
     const currentPage = props.data.wpPage;
     const allWpSolution = props.data.allWpSolution.edges
     const allWpPartner = props.data.allWpPartner.edges
-    console.log(allWpSolution, '===================================')
+    console.log(currentPage, '===================================')
     const [partners,
         setPartners] = useState(allWpPartner)
 
@@ -35,6 +35,21 @@ const PartnersbySolutions = (props) => {
                 description={currentPage.seo.opengraphDescription ? currentPage.seo.opengraphDescription : null}
                 image={currentPage.featuredImage.node.sourceUrl ? currentPage.featuredImage.node.sourceUrl : null}
             >
+
+<section className="main-slider-wrapper innnerslider our-solution-banner">
+                    <div className="main-slider">
+                        <div className="item" style={{ backgroundImage: `url(${currentPage.featuredImage ? currentPage.featuredImage.node.sourceUrl : null})` }}>
+                            {/* {currentPage.AdditionalFields.heroImageGradent === true ? <div className="feature-image-overlay"></div> : null} */}
+                            <img src="https://media.aljhealth.com/wp-content/uploads/2020/12/28082150/hero-transparent.png" className="slider-transparent img-fluid slider-transparent-img" alt="hero-transparent" />
+                            <div className="container">
+                                <div className="text">
+                                    {/* <p className="heading wow fadeIn animated">{SiteTrans.our_partners_label[currentPage.locale.id]}</p> */}
+                                    {/* <h1 className="wow fadeIn" data-wow-delay="0.4s" dangerouslySetInnerHTML={{ __html: currentPage.AdditionalFields.heading }} /> */}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
                 <div className="container-fluid partner-listing-container section">
                     <div className="container">
@@ -103,6 +118,7 @@ export const PartnerPortalQuery = graphql`
                 node {
                 gatsbyImage(width: 1320, placeholder: BLURRED)
                 altText
+                sourceUrl
                 }
             }
             template {
