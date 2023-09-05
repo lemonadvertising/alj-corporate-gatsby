@@ -1,3 +1,4 @@
+
 import React from 'react'
 import { graphql } from "gatsby";
 import Layout from '../components/layout';
@@ -12,7 +13,7 @@ import Slider from "react-slick";
 const Page = (props) => {
   
   const currentPage = props.data.wpPressrelease;
-  const relatedNews = props.data.allWpPressrelease;
+  const relatedNews = props.data.allWpPressrelease
   const urlLang = props.pageContext.lang == "en_US" ? "en" : "ar"
     {console.log("currentPage", currentPage)}
   return (
@@ -22,14 +23,10 @@ const Page = (props) => {
     description={currentPage.seo.opengraphDescription?currentPage.seo.opengraphDescription:null}
     image={currentPage.featuredImage.node.sourceUrl?currentPage.featuredImage.node.sourceUrl:null}
     >
-<<<<<<< HEAD
       {
         console.log(currentPage.featuredImage, '--------------------------------')
       }
 
-=======
-    {console.log("Current page featured image",currentPage.featuredImage.node.sourceUrl)}
->>>>>>> dev
        <div className='container'>
         <div className='row'>      
         <div className='col-md-12'>
@@ -138,3 +135,6 @@ export const wpNewsPage = graphql`
   }
 `;
 
+// apps-fileview.texmex_20230817.01_p1
+// newsDetails.js
+// Displaying newsDetails.js.
