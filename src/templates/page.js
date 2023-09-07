@@ -192,4 +192,4 @@ export const painPage = graphql`
 
 // apps-fileview.texmex_20230817.01_p1
 // page.js
-// Displaying newsDetails.js.
+// Displaying page.js.

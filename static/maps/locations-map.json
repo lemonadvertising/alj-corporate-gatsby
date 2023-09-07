@@ -1,0 +1,44 @@
+{
+	"mapwidth":"960",
+	"mapheight":"500",
+	"categories":[],
+	"levels":[
+		{
+			"id":"world",
+			"title":"world",
+			"map":"/maps/locations-map.svg",
+			"locations":[
+				{
+					"id": "usa",
+					"title": "USA",
+					"description": "",
+					"pin": "pin-square pin-lg",
+					"label": "/common/css/images/pin.svg",
+					"fill": "transparent",
+					"x": "0.15",
+					"y": "0.35"
+				},
+				{
+					"id": "aus",
+					"title": "AUS",
+					"description": "",
+					"pin": "pin-square pin-lg",
+					"label": "/common/css/images/pin.svg",
+					"fill": "transparent",
+					"x": "0.25",
+					"y": "0.5"
+				},
+				{
+					"id": "dubai",
+					"title": "Dubai",
+					"description": "",
+					"pin": "pin-square pin-lg",
+					"label": "/common/css/images/pin.svg",
+					"fill": "transparent",
+					"x": "0.61",
+					"y": "0.31"
+				}
+			]
+		}
+	]
+}

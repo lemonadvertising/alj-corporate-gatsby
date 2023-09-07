@@ -1,0 +1,174 @@
+/*-----------For Laptop width 1400 to 1600 Portrait View----------------*/
+@media only screen and (max-width:1600px) {
+
+}
+
+/*-----------For Laptop width 1366 Portrait View----------------*/
+@media only screen and (max-width:1366px) {
+
+}
+
+/*-----------For Tablet Portrait View----------------*/
+@media only screen and (max-width:1099px) {
+
+}
+
+/*-----------For Tablet Portrait View----------------*/
+@media only screen and (max-width:991px) {
+    .navbar-dark .navbar-toggler{
+        border: 0;
+        border-radius: 0;
+        padding-right: 0;
+        
+    }
+    .navbar-dark .navbar-toggler:focus{
+        outline: none;
+    }
+    .alj-nav{
+        background: rgb(13, 35, 59);
+    }
+    
+    .navbar-dark .navbar-nav .nav-link {
+    font-size: 12px;
+}
+    
+    
+    section .heading {
+    font-weight: 400;
+    letter-spacing: 2px;
+    }
+    .main-slider .slider-transparent{
+        height: 500px;
+    }
+    
+    .slider-controllers .count {
+    font-weight: 100;
+    width: 60px;
+    font-size: 20px;
+}
+    
+    .main-slider .text {
+    left: 16px;
+}
+    
+    .main-slider .text h4{
+        line-height: inherit;
+        font-size: 22px;
+    }
+    
+    .main-slider .text {
+    position: absolute;
+        top: 60%;
+    }
+    
+       .impact-section .text,
+        .whatwedo-section .text,
+    .oursolution-section .text,
+    .partner-section .text{
+        padding:25px 0;
+        
+    }
+    .ceo-section .bg{
+        background: none;
+    }
+    
+    .ceo-section img{
+        width: 100%;
+    }
+    
+    .africa-section{
+            background-position: center center;
+    }
+    
+    .oursolution-section{
+        margin-top: 50px;
+    }
+
+    .alj-nav{
+        background-color: rgb(13 35 59 / 98%) !important;
+    } 
+    
+}
+
+/*-----------For Mobile View----------------*/
+@media only screen and (max-width:767px) {
+    body{
+        font-size: 14px;
+    }
+    
+    .scroll-down{
+        left: auto;
+        right: 0;
+    }
+    
+ #map {
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 300px;
+    width: 100%;
+}
+    
+    
+.donwload-apps {
+
+    margin-top: 25px;
+        margin-bottom: 10px;
+}
+    
+    .footer-section ul{
+        margin-bottom: 15px;
+    } 
+   
+    
+    section strong {
+    
+    font-weight: 16px;
+    font-size: 18px;
+}
+    
+    
+    .section h5 {
+    font-size: 22px;
+    }
+    .section h4, .grey-bg h4 {
+
+    font-size: 26px;
+    line-height: 26px;
+
+}
+    
+    
+    .ceo-section .text {
+    padding: 30px;
+}
+    
+    .ceo-section blockquote {
+    font-size: 18px;
+}
+    
+    .ceo-section .text {
+    padding: 30px;
+    padding-bottom: 50px;
+}
+  .scroll-top {
+
+    left: auto;
+    right: 15px;
+}  
+    
+    
+}
+
+@media screen and (min-width:320px) and (max-width:767px) and (orientation:landscape) {
+
+
+    
+    
+}
+
+@media only screen and (max-width:360px) {
+   
+    
+}

@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useLocation } from "@reach/router";
+import { useStaticQuery, graphql, Link } from 'gatsby'
 import { initializeAndTrack } from "gatsby-plugin-gdpr-cookies";
 import Logo from "./logo.svg";
 import "./style.css";
@@ -30,7 +31,35 @@ function useStickyState(defaultValue, key) {
   return [value, setter];
 }
 
-const CookieConsent = () => {
+const CookieConsent = (props) => {
+
+  const CookieConsentPageQuery = useStaticQuery(graphql`
+  {
+    allWp {
+           nodes {
+             themeGeneralSettings {
+               themesettings {
+                 additionalCookies
+                 cookieConsent
+                 cookiePolicy
+                 copyright
+                 thirdPartyCookies
+                 strictlyNecessaryCookies
+                 privacyOverview
+                 footerAddress
+                 fieldGroupName
+               }
+             }
+           }
+         }
+  }
+  `)
+
+console.log('propsssssss',props)
+
+
+
+
   const location = useLocation();
   if (isBrowser()) {
     initializeAndTrack(location);
@@ -255,14 +284,9 @@ const CookieConsent = () => {
                     {currentTab === "tab-a" ? (
                       <div>
                         <h3 className="tab-title">Privacy overview</h3>
-                        <div className="">
-                          <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consectetur quam congue sem finibus lobortis. Vestibulum eu risus nunc. Morbi volutpat facilisis ultricies. Vestibulum hendrerit, erat dapibus dapibus vestibulum, diam urna blandit ipsum, ut efficitur nunc arcu nec lectus. Nullam dignissim malesuada nunc at dapibus. Donec leo magna, euismod et dui vitae, tincidunt tincidunt tortor. Donec porttitor sem id neque volutpat, quis lacinia magna sodales. Praesent pharetra dui sed lacinia accumsan.
-                          </p>
-                          <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consectetur quam congue sem finibus lobortis. Vestibulum eu risus nunc. Morbi volutpat facilisis ultricies. Vestibulum hendrerit, erat dapibus dapibus vestibulum, diam urna blandit ipsum, ut efficitur nunc arcu nec lectus. Nullam dignissim malesuada nunc at dapibus. Donec leo magna, euismod et dui vitae, tincidunt tincidunt tortor. Donec porttitor sem id neque volutpat, quis lacinia magna sodales. Praesent pharetra dui sed lacinia accumsan.
-                          </p>
-                        </div>
+                        <div
+                          dangerouslySetInnerHTML={{__html: CookieConsentPageQuery.allWp.nodes[0].themeGeneralSettings.themesettings.cookieConsent}}
+                        />
                       </div>
                     ) : (
                       ""
@@ -273,23 +297,9 @@ const CookieConsent = () => {
                         <h3 className="tab-title">
                           Strictly necessary cookies
                         </h3>
-                        <div className="">
-                          <p>
-                            Strictly Necessary Cookie should be enabled at all
-                            times. The cookies are essential for the proper
-                            functioning of a website. They allow you to navigate
-                            around the website and use its features, such as
-                            accessing secure areas or filling out forms.
-                          </p>
-                          <p>
-                            These cookies do not collect personal information
-                            and are deleted when you close your browser. By
-                            accepting these cookies, you are allowing the
-                            website to provide you with requested services such
-                            as remembering remembering your preferences while
-                            you browse and maintaining your session state.
-                          </p>
-                        </div>
+                        <div
+                          dangerouslySetInnerHTML={{__html: CookieConsentPageQuery.allWp.nodes[0].themeGeneralSettings.themesettings.strictlyNecessaryCookies}}
+                        />
 
                         <div className="switchWrapper">
                           <label className="switch">
@@ -321,13 +331,9 @@ const CookieConsent = () => {
                       <div>
                         <h3 className="tab-title">3rd party cookies</h3>
                         <div className="textWraperHalf">
-                          <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consectetur quam congue sem finibus lobortis. Vestibulum eu risus nunc. Morbi volutpat facilisis ultricies. Vestibulum hendrerit, erat dapibus dapibus vestibulum, diam urna blandit ipsum, ut efficitur nunc arcu nec lectus. Nullam dignissim malesuada nunc at dapibus. Donec leo magna, euismod et dui vitae, tincidunt tincidunt tortor. Donec porttitor sem id neque volutpat, quis lacinia magna sodales. Praesent pharetra dui sed lacinia accumsan.
-                          </p>
-                          <p>
-                          Donec dictum mi ut risus fermentum maximus. Nullam ut gravida turpis. Vestibulum ut dapibus ipsum, at varius metus. Donec eget tempus sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vestibulum nisi in tortor ornare dapibus. Cras sit amet nulla ante. Curabitur volutpat at arcu eget faucibus.
-                          </p>
-                     
+                        <div
+                          dangerouslySetInnerHTML={{__html: CookieConsentPageQuery.allWp.nodes[0].themeGeneralSettings.themesettings.thirdPartyCookies}}
+                        />
                         </div>
 
                         <h5>Hot Jar</h5>
@@ -382,12 +388,10 @@ const CookieConsent = () => {
                       <div>
                         <h3 className="tab-title">Additional cookies</h3>
                         <div className="textWraperHalf">
-                          <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consectetur quam congue sem finibus lobortis. Vestibulum eu risus nunc. Morbi volutpat facilisis ultricies. Vestibulum hendrerit, erat dapibus dapibus vestibulum, diam urna blandit ipsum, ut efficitur nunc arcu nec lectus. Nullam dignissim malesuada nunc at dapibus. Donec leo magna, euismod et dui vitae, tincidunt tincidunt tortor. Donec porttitor sem id neque volutpat, quis lacinia magna sodales. Praesent pharetra dui sed lacinia accumsan.
-                          </p>
-                          <p>
-                          Donec dictum mi ut risus fermentum maximus. Nullam ut gravida turpis. Vestibulum ut dapibus ipsum, at varius metus. Donec eget tempus sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vestibulum nisi in tortor ornare dapibus. Cras sit amet nulla ante. Curabitur volutpat at arcu eget faucibus.
-                          </p>
+                        <div
+                          dangerouslySetInnerHTML={{__html: CookieConsentPageQuery.allWp.nodes[0].themeGeneralSettings.themesettings.additionalCookies}}
+                        />
+                        
                         </div>
                         <div className="switchWrapper">
                           <label className="switch">
@@ -419,19 +423,10 @@ const CookieConsent = () => {
                       <div>
                         <h3 className="tab-title">Cookie policy</h3>
                         <div className="textWraperFull">
-                          <p>More information about our Cookie Policy</p>
-                          <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consectetur quam congue sem finibus lobortis. Vestibulum eu risus nunc. Morbi volutpat facilisis ultricies. Vestibulum hendrerit, erat dapibus dapibus vestibulum, diam urna blandit ipsum, ut efficitur nunc arcu nec lectus. Nullam dignissim malesuada nunc at dapibus. Donec leo magna, euismod et dui vitae, tincidunt tincidunt tortor. Donec porttitor sem id neque volutpat, quis lacinia magna sodales. Praesent pharetra dui sed lacinia accumsan.
-                          </p>
-                          <p>
-                          Donec dictum mi ut risus fermentum maximus. Nullam ut gravida turpis. Vestibulum ut dapibus ipsum, at varius metus. Donec eget tempus sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vestibulum nisi in tortor ornare dapibus. Cras sit amet nulla ante. Curabitur volutpat at arcu eget faucibus.
-                          </p>
-                          <p>
-                          Phasellus eu magna eros. Ut ullamcorper turpis condimentum, malesuada ex sed, tempus ante. Quisque ac ultrices ipsum. Duis nec lectus sed ex venenatis placerat eget non lectus. Maecenas non dui lectus. Sed in facilisis nibh. Nullam et ligula at dui convallis cursus. Ut ac magna id risus pretium pellentesque id quis odio. Nunc at bibendum lorem, non feugiat eros. Etiam malesuada sapien nibh, ac dictum dolor sodales ac. Mauris vitae elementum libero, vel efficitur libero. Ut orci odio, vestibulum ac mauris eget, imperdiet porttitor massa. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque id aliquam turpis. Nullam fringilla semper nunc, at dapibus nibh pharetra in. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-                          </p>
-                          <p>
-                          Suspendisse potenti. Mauris facilisis ut lorem vel vehicula. Fusce tristique quis ante sit amet iaculis. Etiam convallis, dolor sed volutpat bibendum, lacus erat euismod justo, eget consectetur velit diam vel felis. Nunc ut eros venenatis, iaculis nisl eget, sodales sem. Integer vel fermentum nisl. Cras nec odio non diam dapibus sollicitudin. Quisque maximus ligula a augue auctor, in gravida odio vestibulum. Phasellus non orci a sem elementum pharetra in vel mauris. Aliquam eget maximus metus. Sed id massa placerat, vulputate erat quis, feugiat arcu.
-                          </p>
+                        <div
+                          dangerouslySetInnerHTML={{__html: CookieConsentPageQuery.allWp.nodes[0].themeGeneralSettings.themesettings.cookiePolicy}}
+                        />
+                        
                          
                         </div>
                       </div>
@@ -469,12 +464,10 @@ const CookieConsent = () => {
                 <div className="col-md-8">
                   {" "}
                   <span className="text">
-                    Should you choose to proceed in accessing this website,
-                    non-permanent cookies will be placed on your computer to
-                    enhance your experience whilst using the site. If you do not
-                    wish to have such non-permanent cookies placed on your
-                    computer please exit the site now. Alternatively, please
-                    click CLOSE to proceed.
+                  
+                    <div
+                          dangerouslySetInnerHTML={{__html: CookieConsentPageQuery.allWp.nodes[0].themeGeneralSettings.themesettings.cookieConsent}}
+                        />
                   </span>{" "}
                 </div>
                 <div className="col-md-4">
@@ -502,3 +495,25 @@ const CookieConsent = () => {
 };
 
 export default CookieConsent;
+
+// export const CookieConsentPageQuery = graphql`
+//   {
+//     allWp {
+//     nodes {
+//       themeGeneralSettings {
+//         themesettings {
+//           additionalCookies
+//           cookieConsent
+//           cookiePolicy
+//           copyright
+//           thirdPartyCookies
+//           strictlyNecessaryCookies
+//           privacyOverview
+//           footerAddress
+//           fieldGroupName
+//         }
+//       }
+//     }
+//   }
+// }
+// `

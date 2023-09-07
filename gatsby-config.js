@@ -6,7 +6,8 @@ module.exports = {
     title: `alj-corporate-gatsby`,
     siteUrl: `https://www.yourdomain.tld`
   },
-  plugins: [{
+  plugins: [
+    {
     resolve: 'gatsby-source-wordpress',
     options: {
       url: `https://aljcms.lemonhq.io/graphql`,
@@ -51,5 +52,16 @@ module.exports = {
       environments: ['production', 'development']
     },
   },
-  "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp","gatsby-plugin-sass"]
+  "gatsby-plugin-image",
+   "gatsby-plugin-sharp", 
+   "gatsby-transformer-sharp",
+   "gatsby-plugin-sass",
+   {
+    resolve: 'gatsby-plugin-load-script',
+    options: {
+        src: '/main.js',
+        crossorigin: 'anonymous',
+    },
+},
+]
 };

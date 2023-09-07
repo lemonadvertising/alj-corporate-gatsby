@@ -1,0 +1,62 @@
+{
+    "levels":[
+       {
+          "locations":[
+            
+       
+             {
+                "id":4314,
+                "title":"Bangalore",
+                "description":"",
+                "x":"0.7253",
+                "y":"0.4684",
+                "pin":"pin-sm",
+                "fill":"#4ec7e5"
+             },
+             {
+                "id":4311,
+                "title":"Dubai",
+                "description":"",
+                "x":"0.6615",
+                "y":"0.3702",
+                "pin":"pin-sm",
+                "fill":"#4ec7e5"
+             },
+         
+             {
+                "id":4307,
+                "title":"Riyadh",
+                "description":"",
+                "x":"0.6357",
+                "y":"0.3641",
+                "pin":"pin-sm",
+                "fill":"#4ec7e5"
+             },
+             {
+                "id":4305,
+                "title":"Istanbul",
+                "description":"",
+                "x":"0.5698",
+                "y":"0.2697",
+                "pin":"pin-sm",
+                "fill":"#4ec7e5"
+             },
+             {
+                "id":4303,
+                "title":"Egypt",
+                "description":"",
+                "x":"0.4530",
+                "y":"0.2738",
+                "pin":"pin-sm",
+                "fill":"#4ec7e5"
+             }
+         
+          ],
+          "id":"world",
+          "title":"world",
+          "map":"\/maps\/locations-map.svg"
+       }
+    ],
+    "mapwidth":"960",
+    "mapheight":"500"
+ }

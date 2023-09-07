@@ -1,10 +1,10 @@
+
 import React from 'react'
 import { graphql } from "gatsby";
 import Layout from '../components/layout';
 // import { StaticImage } from "gatsby-plugin-image"
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
 import SocialShare from "../components/main/social-share"
-import NewsList from '../components/MediaCenter/NewsList'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import RelatedArticles from '../components/MediaCenter/RelatedArticles'
@@ -13,7 +13,7 @@ import Slider from "react-slick";
 const Page = (props) => {
   
   const currentPage = props.data.wpPressrelease;
-  const relatedNews = props.data.allWpPressrelease;
+  const relatedNews = props.data.allWpPressrelease
   const urlLang = props.pageContext.lang == "en_US" ? "en" : "ar"
     {console.log("currentPage", currentPage)}
   return (
@@ -23,7 +23,10 @@ const Page = (props) => {
     description={currentPage.seo.opengraphDescription?currentPage.seo.opengraphDescription:null}
     image={currentPage.featuredImage.node.sourceUrl?currentPage.featuredImage.node.sourceUrl:null}
     >
-    {console.log("Current page featured image",currentPage.featuredImage.node.sourceUrl)}
+      {
+        console.log(currentPage.featuredImage, '--------------------------------')
+      }
+
        <div className='container'>
         <div className='row'>      
         <div className='col-md-12'>
@@ -47,6 +50,7 @@ const Page = (props) => {
       </div>
       
       <RelatedArticles 
+        title="Related Articles"
         relatedNews = {props.data.allWpPressrelease}
         getCatetory="newscategories"
       />
@@ -69,6 +73,7 @@ export const wpNewsPage = graphql`
         node {
           gatsbyImage(width: 1100, placeholder: BLURRED)
           altText
+          sourceUrl
         }
       }
       locale {
@@ -130,3 +135,6 @@ export const wpNewsPage = graphql`
   }
 `;
 
+// apps-fileview.texmex_20230817.01_p1
+// newsDetails.js
+// Displaying newsDetails.js.

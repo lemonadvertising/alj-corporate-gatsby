@@ -1,13 +1,10 @@
 
 import React from 'react'
-// import Link from 'gatsby-link'
-import { Link } from 'gatsby'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import NewsList from './NewsList'
-import NewsCards from "../News/NewsCards"
-export default function RelatedArticles({relatedNews, getCatetory}) {
+import Cards from "./Cards"
+export default function RelatedArticles({title, relatedNews, getCatetory}) {
   const settings = {
     dots: true,
     infinite: true,
@@ -19,28 +16,22 @@ export default function RelatedArticles({relatedNews, getCatetory}) {
     return (  
         <section className="content morenews news-section">
         <div className="container">
-          <h4>Related Articles</h4>
-          
-          
+          <h4>{title?title:""}</h4>                    
           {relatedNews ?
-
-
-          
             <div className="row no-gutters related-articles">
               <div className="col-lg-12">
                 <div className="inrightbx">
                 <div className='row'>
                 <Slider {...settings}>
                       {relatedNews.edges.map((data, key) => (                                           
-                        <NewsCards
+                        <Cards
                         url={data.node.localizedWpmlUrl}
                         imageUrl={data.node.featuredImage.node}
                         imageAlt={data.node.featuredImage.node?data.node.featuredImage.node:"image"}
                         date={data.node.date}
                         location={data.node.press_release_acf.location}
                         shortTitle={data.node.press_release_acf.shortTitle}
-                        shortSummary={data.node.press_release_acf.summary}
-                        // shareUrl={props.location.href}                        
+                        shortSummary={data.node.press_release_acf.summary}                                            
                         category={
                           getCatetory === "newscategories" ?
                           data.node.newscategories.nodes[0].name :
@@ -54,11 +45,7 @@ export default function RelatedArticles({relatedNews, getCatetory}) {
                         
                       ))}
                       </Slider> 
-                  </div>
-                  {/* <div className="insightswrap">
-                  </div> */}
-                  
-
+                  </div>                         
                 </div>
               </div>
 

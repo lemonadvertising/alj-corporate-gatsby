@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { graphql, Link } from "gatsby";
 import Layout from '../components/layout';
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
-import NewsCards from "../components/News/NewsCards"
+import Cards from "../components/MediaCenter/Cards"
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -572,7 +572,7 @@ const NewsListing = (props) => {
               <div className="row">
                 <h4>featured</h4>
                 {featuredPosts.map((data) => {
-                  return <NewsCards
+                  return <Cards
                     url={data.node.localizedWpmlUrl}
                     imageUrl={data.node.featuredImage.node}
                     imageAlt={data.node.featuredImage.node ? data.node.featuredImage.node : "image"}
@@ -629,7 +629,7 @@ const NewsListing = (props) => {
                 <div className="row mediabxwrap">
                   {
                     visibleNews.map((data, key) => (
-                      <NewsCards
+                      <Cards
                         url={data.node.localizedWpmlUrl}
                         imageUrl={data.node.featuredImage.node}
                         imageAlt={data.node.featuredImage.node ? data.node.featuredImage.node : "image"}

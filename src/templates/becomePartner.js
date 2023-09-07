@@ -291,7 +291,7 @@ const BecomePartner = (props) => {
             // };
 
             axios(config).then(function (response) {
-                console.log(JSON.stringify(response.data, "-=-=-=-=-=-==-=-"));
+                // console.log(JSON.stringify(response.data));
                 // recaptchaInstance.reset();
                 setFormState({
                     ...formState,
