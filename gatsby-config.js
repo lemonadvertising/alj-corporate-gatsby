@@ -52,6 +52,7 @@ module.exports = {
       environments: ['production', 'development']
     },
   },
+  "gatsby-plugin-next-seo",
   "gatsby-plugin-image",
    "gatsby-plugin-sharp", 
    "gatsby-transformer-sharp",

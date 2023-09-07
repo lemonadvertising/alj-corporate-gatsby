@@ -93,6 +93,7 @@ useEffect(() => handleComponentMounted(), []);
       title={title?title:layoutData.wp.generalSettings.title}
       description={description?description:layoutData.wp.generalSettings.description}
       image={image?image:""}
+      url="https://jcstaging.gatsbyjs.io/en/"
       />
       <Header />
       <div className="mainWrapper">
