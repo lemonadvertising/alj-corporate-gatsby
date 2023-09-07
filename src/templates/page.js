@@ -1,8 +1,9 @@
 
-import React, { useRef } from 'react'
+import React, {useEffect, useRef } from 'react'
 import { graphql } from "gatsby";
 import Layout from '../components/layout';
 import Slider from "react-slick";
+import Function from "../lib/functions";
 // import { StaticImage } from "gatsby-plugin-image"
 import active_icon from '../common/images/active_icon.png'
 import agreed_icon from '../common/images/agreed_icon.png'
@@ -12,8 +13,18 @@ import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
 const Page = (props) => {
   const currentPage = props.data.wpPage;
   const spotlight = props.data.allWpSpotlight;
-
   const sliderRef = useRef(null);
+
+
+  useEffect(() => onPreRouteUpdate(),[]);
+  // useEffect(() => onPreRouteUpdate());
+  
+  const onPreRouteUpdate = () => {
+      Function.LoadingAllSliderScript()
+            
+    }
+
+
 
   const playVideo = (videoId) => {
     const video = document.getElementById(videoId);

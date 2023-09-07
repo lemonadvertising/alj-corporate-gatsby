@@ -5,6 +5,7 @@ import Seo from "./main/Seo";
 import Header from "./main/Header"
 import Footer from "./main/Footer"
 import './../../static/common/css/default.css';
+import ogShare from "../common/images/og-share.jpg"
 // import $ from 'jquery';
 
 var load = require('load-script');
@@ -38,33 +39,33 @@ useEffect(() => handleComponentMounted(), []);
     document.querySelectorAll("title").forEach(element => {
         if (element.textContent === "") element.remove() // remove title if its empty
     });
-    if (typeof window !== 'undefined') {
-        window.initMap = function () {
-            // Basic options for a simple Google Map
-            // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
-            var mapOptions = {
-                // How zoomed in you want the map to start at (always required)
-                zoom: 11,
-                // The latitude and longitude to center the map (always required)
-                center: new window.google.maps.LatLng(43.7384, 7.4246), // New York
-                // How you would like to style the map. 
-                // This is where you would paste any style found on Snazzy Maps.
-                styles: [{ "featureType": "all", "elementType": "all", "stylers": [{ "invert_lightness": true }, { "saturation": 10 }, { "lightness": 30 }, { "gamma": 0.5 }, { "hue": "#435158" }] }]
-            };
-            // Get the HTML DOM element that will contain your map 
-            // We are using a div with id="map" seen below in the <body>
-            var mapElement = document.getElementById('map');
-            //if(mapElement)   {
-            // Create the Google Map using our element and options defined above
-            var map = new window.google.maps.Map(mapElement, mapOptions);
-            // Let's also add a marker while we're at itç
-            var marker = new window.google.maps.Marker({
-                position: new window.google.maps.LatLng(43.7384, 7.4246),
-                map: map,
-                title: 'Snazzy!'
-            });
-        }
-    }
+    // if (typeof window !== 'undefined') {
+    //     window.initMap = function () {
+    //         // Basic options for a simple Google Map
+    //         // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+    //         var mapOptions = {
+    //             // How zoomed in you want the map to start at (always required)
+    //             zoom: 11,
+    //             // The latitude and longitude to center the map (always required)
+    //             center: new window.google.maps.LatLng(43.7384, 7.4246), // New York
+    //             // How you would like to style the map. 
+    //             // This is where you would paste any style found on Snazzy Maps.
+    //             styles: [{ "featureType": "all", "elementType": "all", "stylers": [{ "invert_lightness": true }, { "saturation": 10 }, { "lightness": 30 }, { "gamma": 0.5 }, { "hue": "#435158" }] }]
+    //         };
+    //         // Get the HTML DOM element that will contain your map 
+    //         // We are using a div with id="map" seen below in the <body>
+    //         var mapElement = document.getElementById('map');
+    //         //if(mapElement)   {
+    //         // Create the Google Map using our element and options defined above
+    //         var map = new window.google.maps.Map(mapElement, mapOptions);
+    //         // Let's also add a marker while we're at itç
+    //         var marker = new window.google.maps.Marker({
+    //             position: new window.google.maps.LatLng(43.7384, 7.4246),
+    //             map: map,
+    //             title: 'Snazzy!'
+    //         });
+    //     }
+    // }
 
     // Sentry.init({
     //   dsn: "https://050d9b0859974084a0158e4b1fd089a0@o4504338663079936.ingest.sentry.io/4504338669371392",
@@ -79,11 +80,11 @@ useEffect(() => handleComponentMounted(), []);
 
   return (
     <div>
-      <Script src="/js/main.js" onLoad={() => setLoaded(true)} />
-      <Script src="/js/jquery.min.js" onLoad={() => setLoaded(true)} />
+      {/* <Script src="/js/main.js" onLoad={() => setLoaded(true)} /> */}
+      {/* <Script src="/js/jquery.min.js" onLoad={() => setLoaded(true)} />
       <Script src="/js/slick.min.js" onLoad={() => setLoaded(true)} />
-      <Script src="/js/owl.carousel.min.js" onLoad={() => setLoaded(true)} />
-      <Script src="/main.js" onLoad={() => setLoaded(true)} />
+      <Script src="/js/owl.carousel.min.js" onLoad={() => setLoaded(true)} /> */}
+      <Script src="/js/main.js" onLoad={() => setLoaded(true)} />
       {loaded && <Script src="/js/default.js" />}
       <Helmet>
       {lang === "ar" ? <body className="arabic" /> : <body className="english" />}          
@@ -91,7 +92,7 @@ useEffect(() => handleComponentMounted(), []);
       <Seo
       title={title?title:layoutData.wp.generalSettings.title}
       description={description?description:layoutData.wp.generalSettings.description}
-      image={image?image:""}
+      image={image?image:ogShare}
       />
       <Header />
       <div className="mainWrapper">
