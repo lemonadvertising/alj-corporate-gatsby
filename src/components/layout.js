@@ -5,7 +5,7 @@ import Seo from "./main/Seo";
 import Header from "./main/Header"
 import Footer from "./main/Footer"
 import './../../static/common/css/default.css';
-import ogShare from "../common/images/og-share.jpg"
+
 // import $ from 'jquery';
 
 var load = require('load-script');
@@ -92,7 +92,7 @@ useEffect(() => handleComponentMounted(), []);
       <Seo
       title={title?title:layoutData.wp.generalSettings.title}
       description={description?description:layoutData.wp.generalSettings.description}
-      image={image?image:ogShare}
+      image={image?image:""}
       />
       <Header />
       <div className="mainWrapper">
