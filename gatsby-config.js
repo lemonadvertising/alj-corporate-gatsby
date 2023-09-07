@@ -52,7 +52,28 @@ module.exports = {
       environments: ['production', 'development']
     },
   },
-  "gatsby-plugin-next-seo",
+  {
+    resolve: 'gatsby-plugin-next-seo',
+    options: {
+      openGraph: {
+        title: "jc",
+        type: 'website',
+        locale: 'en_US',
+        description: "",
+        images: [
+          {
+            url: 'https://media.aljhealth.com/wp-content/uploads/2021/03/31085452/meta-image-2.png',
+            //secure_url:'https://media.aljhealth.com/wp-content/uploads/2021/03/31085452/meta-image-2.png',
+            // type:'image/jpeg',
+            // itemprop:'image',
+            alt: 'jc'
+          }
+        ],
+        site_name: 'jc',
+      },
+
+    },
+  },
   "gatsby-plugin-image",
    "gatsby-plugin-sharp", 
    "gatsby-transformer-sharp",
