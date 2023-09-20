@@ -350,11 +350,12 @@ margin-bottom: 10px;
 
 .thankyoumessage-newsletter{
   color: #fff;
-  font-weight: 300;
+  font-weight: 500;
   font-size: 15px;
-  border: 1px solid #2ad2c9;
+  border: 1px solid #009e55;
   padding: 7px 20px;
   display: block;
+  background-color: #009e55;
 }
 .thankyoumessage{
   color: #fff;
@@ -627,8 +628,8 @@ outline: none !important;
 }
 
 .footer-section .text{
-padding: 25px 0;   
-      color: #fff;
+  padding: 25px 0;   
+  color: #000;
 }
 
 
