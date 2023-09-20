@@ -7,6 +7,14 @@ const commonFunctions = {
      
    },
 
+   LoadingBootstrapScript : () => {    
+    const script = document.createElement("script");
+    script.src = `/js/bootstrap.min.js`;
+    script.async = true;
+    document.body.appendChild(script);
+  
+  },
+
 
    LoadingMediaSliderScript : () => {    
     const script = document.createElement("script");

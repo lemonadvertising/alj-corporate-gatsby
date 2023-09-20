@@ -21,6 +21,7 @@ const Page = (props) => {
   
   const onPreRouteUpdate = () => {
       Function.LoadingAllSliderScript()
+      Function.LoadingBootstrapScript()
             
     }
 
