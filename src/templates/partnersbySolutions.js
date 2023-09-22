@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { graphql } from "gatsby";
 import Layout from '../components/layout';
 import Slider from "react-slick";
+import Function from "../lib/functions";
 // import { StaticImage } from "gatsby-plugin-image"
 import active_icon from '../common/images/active_icon.png'
 import agreed_icon from '../common/images/agreed_icon.png'
@@ -10,6 +11,14 @@ import oem_icon from '../common/images/oem_icon.png';
 
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
 const PartnersbySolutions = (props) => {
+    useEffect(() => onPreRouteUpdate(),[]);
+    // useEffect(() => onPreRouteUpdate());
+    
+    const onPreRouteUpdate = () => {
+        Function.LoadingAllSliderScript()
+        Function.LoadingBootstrapScript()
+                
+    }
     const currentPage = props.data.wpPage;
     const allWpSolution = props.data.allWpSolution.edges
     const allWpPartner = props.data.allWpPartner.edges

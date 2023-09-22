@@ -6,7 +6,7 @@ import Layout from '../components/layout';
 import {graphql} from "gatsby";
 // import styled from 'styled-components';
 // import SEO from "../components/seo";
-// import Function from "../lib/functions";
+import Function from "../lib/functions";
 import $ from 'jquery';
 // import {GatsbySeo} from 'gatsby-plugin-next-seo';
 import {decode} from 'html-entities';
@@ -19,11 +19,12 @@ const PartnerDetailsPage = (props) => {
         setShareUrl] = useState('')
     useEffect(() => handleComponentMounted(), []);
     useEffect(() => handleComponentUpdated());
-    // useEffect(() => onPreRouteUpdate(), []);
+    useEffect(() => onPreRouteUpdate(), []);
 
-    // const onPreRouteUpdate = () => {
-    //     Function.LoadingAllSliderScript()
-    // }
+    const onPreRouteUpdate = () => {
+        Function.LoadingAllSliderScript()
+        Function.LoadingBootstrapScript()
+    }
     const handleComponentMounted = () => {
         setTimeout(() => {
             const getUrl = window.location.href
