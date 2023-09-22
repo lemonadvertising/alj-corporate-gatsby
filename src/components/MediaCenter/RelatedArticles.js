@@ -1,10 +1,21 @@
 
-import React from 'react'
+import React, {useEffect} from 'react'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Cards from "./Cards"
+import Cards from "./Cards";
+import Function from "../../lib/functions";
 export default function RelatedArticles({title, relatedNews, getCatetory}) {
+
+  useEffect(() => onPreRouteUpdate(),[]);
+  // useEffect(() => onPreRouteUpdate());
+  
+  const onPreRouteUpdate = () => {
+      Function.LoadingAllSliderScript()
+      Function.LoadingBootstrapScript()
+            
+  }
+
   const settings = {
     dots: true,
     infinite: true,

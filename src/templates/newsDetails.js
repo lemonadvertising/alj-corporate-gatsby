@@ -1,19 +1,19 @@
 
-import React from 'react'
+import React, {useEffect, useRef } from 'react'
 import { graphql } from "gatsby";
 import Layout from '../components/layout';
+import Function from "../lib/functions";
 // import { StaticImage } from "gatsby-plugin-image"
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
 import SocialShare from "../components/main/social-share"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import RelatedArticles from '../components/MediaCenter/RelatedArticles'
-// import React, { Component } from "react";
 import Slider from "react-slick";
 const Page = (props) => {
   
   const currentPage = props.data.wpPressrelease;
-  const relatedNews = props.data.allWpPressrelease
+  const relatedNews = props.data.allWpPressrelease;
   const urlLang = props.pageContext.lang == "en_US" ? "en" : "ar"
     {console.log("currentPage", currentPage)}
   return (
