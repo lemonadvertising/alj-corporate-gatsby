@@ -33,80 +33,61 @@ const pageQuery = `
 }
 `
 
-const wpPressrelease = `
- {
-  allWpPressrelease {
-    edges {
-      node {
-        id
-        title
-        slug
-        uri
-        locale {
-          id
-          locale
-        }
-        localizedWpmlUrl
-      }
-    }
-  } 
-} `
+// const inthenewsQuery = `
+//  {
+//   allWpInthenews {
+//     edges {
+//       node {
+//         id
+//         title
+//         slug
+//         uri
+//         locale {
+//           id
+//           locale
+//         }
+//         localizedWpmlUrl
+//       }
+//     }
+//   } 
+// } `
+// const insightsQuery = `
+//  {
+//   allWpPerspective {
+//     edges {
+//       node {
+//         id
+//         title
+//         slug
+//         uri
+//         locale {
+//           id
+//           locale
+//         }
+//         localizedWpmlUrl
+//       }
+//     }
+//   } 
+// } `
 
-const inthenewsQuery = `
- {
-  allWpInthenews {
-    edges {
-      node {
-        id
-        title
-        slug
-        uri
-        locale {
-          id
-          locale
-        }
-        localizedWpmlUrl
-      }
-    }
-  } 
-} `
-const insightsQuery = `
- {
-  allWpPerspective {
-    edges {
-      node {
-        id
-        title
-        slug
-        uri
-        locale {
-          id
-          locale
-        }
-        localizedWpmlUrl
-      }
-    }
-  } 
-} `
-
-const partnerslistQuery = `
- {
-  allWpPartner {
-    edges {
-      node {
-        title
-        slug
-        uri
-        id
-        locale {
-          id
-          locale
-        }
-        localizedWpmlUrl
-      }
-    }
-  }
-}`
+// const partnerslistQuery = `
+//  {
+//   allWpPartner {
+//     edges {
+//       node {
+//         title
+//         slug
+//         uri
+//         id
+//         locale {
+//           id
+//           locale
+//         }
+//         localizedWpmlUrl
+//       }
+//     }
+//   }
+// }`
 
 const wpStyle = `
  {
@@ -164,109 +145,83 @@ exports.createPages = ({ actions, graphql, reporter }) => {
                 resolve();     
 
             })
-            .then(() => {
-              graphql(wpPressrelease)
-                  .then(result => {
-                      if (result.errors) {
-                          console.log(result.errors);
-                          reject(result.errors);
-                      }
-                      const postTemplate = path.resolve("./src/templates/newsDetails.js");
-                      _.each(result.data.allWpPressrelease.edges, edge => {
-                          if (edge.node.locale.id === "en_US") {
-                              actions.createRedirect({ fromPath: '/press-release/' + edge.node.slug, toPath: edge.node.localizedWpmlUrl, redirectInBrowser: true, isPermanent: true })
-                              actions.createRedirect({ fromPath: '/press-release/' + edge.node.slug + "/", toPath: edge.node.localizedWpmlUrl, redirectInBrowser: true, isPermanent: true })
-                          }
-                          actions.createPage({
-                              path: `/${langSlugMapping[edge.node.locale.id]}press-release/${edge.node.slug}/`,
-                              component: slash(postTemplate),
-                              ownerNodeId: edge.node.id,
-                              context: {
-                                  id: edge.node.id,
-                                  lang: edge.node.locale.id
-
-                              },
-                          });
-                      });
-                      resolve();
-                  });
-          })
-          .then(() => {
-            graphql(inthenewsQuery)
-                .then(result => {
-                    if (result.errors) {
-                        console.log(result.errors);
-                        reject(result.errors);
-                    }
-                    const postTemplate = path.resolve("./src/templates/inTheNewsDetails.js");
-                    _.each(result.data.allWpInthenews.edges, edge => {
-                        if (edge.node.locale.id === "en_US") {
-                            actions.createRedirect({ fromPath: '/in-the-news/' + edge.node.slug, toPath: edge.node.localizedWpmlUrl, redirectInBrowser: true, isPermanent: true })
-                            actions.createRedirect({ fromPath: '/in-the-news/' + edge.node.slug + "/", toPath: edge.node.localizedWpmlUrl, redirectInBrowser: true, isPermanent: true })
-                        }
-                        actions.createPage({
-                            path: `/${langSlugMapping[edge.node.locale.id]}in-the-news/${edge.node.slug}/`,
-                            component: slash(postTemplate),
-                            ownerNodeId: edge.node.id,
-                            context: {
-                                id: edge.node.id,
-                                lang: edge.node.locale.id
-                            },
-                        });
-                    });
-                    resolve();
-                });
-        })   .then(() => {
-          graphql(insightsQuery)
-              .then(result => {
-                  if (result.errors) {
-                      console.log(result.errors);
-                      reject(result.errors);
-                  }
-                  const postTemplate = path.resolve("./src/templates/insightsDetails.js");
-                  _.each(result.data.allWpPerspective.edges, edge => {
-                      if (edge.node.locale.id === "en_US") {
-                          actions.createRedirect({ fromPath: '/perspective/' + edge.node.slug, toPath: edge.node.localizedWpmlUrl, redirectInBrowser: true, isPermanent: true })
-                          actions.createRedirect({ fromPath: '/perspective/' + edge.node.slug + "/", toPath: edge.node.localizedWpmlUrl, redirectInBrowser: true, isPermanent: true })
-                      }
-                      actions.createPage({
-                          path: `/${langSlugMapping[edge.node.locale.id]}perspective/${edge.node.slug}/`,
-                          component: slash(postTemplate),
-                          ownerNodeId: edge.node.id,
-                          context: {
-                              id: edge.node.id,
-                              lang: edge.node.locale.id
-                          },
-                      });
-                  });
-                  resolve();
-              });
-        })
-        .then(() => {
-          graphql(partnerslistQuery)
-              .then(result => {
-                  if (result.errors) {
-                      console.log(result.errors);
-                      reject(result.errors);
-                  }
-                  const partnerDetail = path.resolve("./src/templates/partnerDetails.js");
-                  _.each(result.data.allWpPartner.edges, edge => {
-                    console.log(edge.node, '==============================================')
-                      actions.createPage({
-                        path: `/${langSlugMapping['en_US']}partners/${edge.node.slug}/`,
-                        component: slash(partnerDetail),
-                        // context: edge.node
-                        ownerNodeId: edge.node.id,
-                        context: {
-                            id: edge.node.id,
-                            lang: langMapping[edge.node.locale.id],
-                            langCode: edge.node.locale.id
-                        },
-                    });
-                  });
-                  resolve();
-              });
-        })
+        //   .then(() => {
+        //     graphql(inthenewsQuery)
+        //         .then(result => {
+        //             if (result.errors) {
+        //                 console.log(result.errors);
+        //                 reject(result.errors);
+        //             }
+        //             const postTemplate = path.resolve("./src/templates/inTheNewsDetails.js");
+        //             _.each(result.data.allWpInthenews.edges, edge => {
+        //                 if (edge.node.locale.id === "en_US") {
+        //                     actions.createRedirect({ fromPath: '/in-the-news/' + edge.node.slug, toPath: edge.node.localizedWpmlUrl, redirectInBrowser: true, isPermanent: true })
+        //                     actions.createRedirect({ fromPath: '/in-the-news/' + edge.node.slug + "/", toPath: edge.node.localizedWpmlUrl, redirectInBrowser: true, isPermanent: true })
+        //                 }
+        //                 actions.createPage({
+        //                     path: `/${langSlugMapping[edge.node.locale.id]}in-the-news/${edge.node.slug}/`,
+        //                     component: slash(postTemplate),
+        //                     ownerNodeId: edge.node.id,
+        //                     context: {
+        //                         id: edge.node.id,
+        //                         lang: edge.node.locale.id
+        //                     },
+        //                 });
+        //             });
+        //             resolve();
+        //         });
+        // })   
+        // .then(() => {
+        //   graphql(insightsQuery)
+        //       .then(result => {
+        //           if (result.errors) {
+        //               console.log(result.errors);
+        //               reject(result.errors);
+        //           }
+        //           const postTemplate = path.resolve("./src/templates/insightsDetails.js");
+        //           _.each(result.data.allWpPerspective.edges, edge => {
+        //               if (edge.node.locale.id === "en_US") {
+        //                   actions.createRedirect({ fromPath: '/perspective/' + edge.node.slug, toPath: edge.node.localizedWpmlUrl, redirectInBrowser: true, isPermanent: true })
+        //                   actions.createRedirect({ fromPath: '/perspective/' + edge.node.slug + "/", toPath: edge.node.localizedWpmlUrl, redirectInBrowser: true, isPermanent: true })
+        //               }
+        //               actions.createPage({
+        //                   path: `/${langSlugMapping[edge.node.locale.id]}perspective/${edge.node.slug}/`,
+        //                   component: slash(postTemplate),
+        //                   ownerNodeId: edge.node.id,
+        //                   context: {
+        //                       id: edge.node.id,
+        //                       lang: edge.node.locale.id
+        //                   },
+        //               });
+        //           });
+        //           resolve();
+        //       });
+        // })
+        // .then(() => {
+        //   graphql(partnerslistQuery)
+        //       .then(result => {
+        //           if (result.errors) {
+        //               console.log(result.errors);
+        //               reject(result.errors);
+        //           }
+        //           const partnerDetail = path.resolve("./src/templates/partnerDetails.js");
+        //           _.each(result.data.allWpPartner.edges, edge => {
+        //             console.log(edge.node, '==============================================')
+        //               actions.createPage({
+        //                 path: `/${langSlugMapping['en_US']}partners/${edge.node.slug}/`,
+        //                 component: slash(partnerDetail),
+        //                 // context: edge.node
+        //                 ownerNodeId: edge.node.id,
+        //                 context: {
+        //                     id: edge.node.id,
+        //                     lang: langMapping[edge.node.locale.id],
+        //                     langCode: edge.node.locale.id
+        //                 },
+        //             });
+        //           });
+        //           resolve();
+        //       });
+        // })
           .then(() => {
             graphql(wpStyle)
                 .then(result => {

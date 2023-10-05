@@ -10,7 +10,15 @@ module.exports = {
     {
     resolve: 'gatsby-source-wordpress',
     options: {
-      url: `https://aljcms.lemonhq.io/graphql`,
+      url: `https://impexpcms.lemonhq.io/wp/graphql`,
+      schema: {
+        previewRequestConcurrency: 150,
+        timeout: 600000,
+        // perPage: 20, // currently set to 100 600000
+        // requestConcurrency: 5, // currently set to 15
+        // previewRequestConcurrency: 2, // currently set to 150
+        // typePrefix: `Wp`,
+      },
       headers:{
           Authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvc29sdXRpb25jbXMuYWxqaGVhbHRoLmNvbVwvZW5cLyIsImlhdCI6MTY3NDU1MjU2NywibmJmIjoxNjc0NTUyNTY3LCJleHAiOjE2NzQ1NTI4NjcsImRhdGEiOnsidXNlciI6eyJpZCI6IjgifX19.GCNNHjfaYd-rXohKpYiY1N46ES1GRsmd-NMAI06Oh1Q"
       },
