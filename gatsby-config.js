@@ -39,6 +39,11 @@ module.exports = {
           createStaticFiles: true,
 
       },
+      // type: {
+      //   MediaItem: {
+      //     exclude: true,
+      //   },
+      // },
    
         
   },
@@ -72,5 +77,5 @@ module.exports = {
         crossorigin: 'anonymous',
     },
 },
-]
+],
 };

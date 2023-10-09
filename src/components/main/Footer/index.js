@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from "gatsby";
 
 import { Link } from "gatsby";
 import SiteTrans from "../../LangConfig/siteTrans.json";
-import CookieConsent from "../cookie-consent"
+// import CookieConsent from "../cookie-consent"
 
 const Footer = (props) => {
   const [formState, setFormState] = useState({
@@ -341,7 +341,7 @@ const Footer = (props) => {
       <div className="bottom-footer">
         <div className="container">
 
-          <CookieConsent />
+          {/* <CookieConsent /> */}
 
         </div>
       </div>

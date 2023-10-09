@@ -18,6 +18,7 @@
     "@webdeveducation/wp-block-tools": "^1.1.21",
     "@wordpress/base-styles": "^4.21.0",
     "@wordpress/block-library": "^8.7.0",
+    "axios": "^1.5.1",
     "fs-extra": "^11.1.1",
     "gatsby": "^5.11.0",
     "gatsby-plugin-gdpr-cookies": "^2.0.9",

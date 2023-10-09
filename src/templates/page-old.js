@@ -114,14 +114,39 @@ const Page = (props) => {
               <div dangerouslySetInnerHTML={{ __html: currentPage.content }} />
             </div>
 
-            
+            <div className='col-md-12 mt-5'>
+
+              <div class="mapMainWrapper">
+                <div class="map-container">
+                  <div id="mapplic"></div>
+
+                  <ul>
+                    <li><span><img src={active_icon} /></span> <p>Active distribution partnerships</p></li>
+                    <li><span><img src={agreed_icon} /></span>  <p>Agreed distribution territories</p></li>
+                    <li> <span><img src={oem_icon} /></span> <p>OEM solution sources</p></li>
+                  </ul>
+                </div>
+              </div>
+              <div className="map-wrapper">
+                <div className="map-container">
+                  <div id="mapplic" className="mapplic-dark"></div>
+                </div>
+              </div>
+
+              <div className="container">
+                    <div className="row">
+                        <div className="col-md-12">
+                            {/* <div className="mapbx">
+                                <div id="vmap"></div>
+                            </div> */}
 
 
 
+                        </div>
+                    </div>
+                </div>
 
-
-
-
+            </div>
           </div>
         </div>
       </Layout>
@@ -152,7 +177,27 @@ export const painPage = graphql`
       }
 
     }
- 
+
+    allWpSpotlight {
+      edges {
+        node {
+          id
+          slug
+          link
+          title
+          spotlights {
+            subTitle
+            spotlight {
+              sourceUrl
+              mediaType
+              mimeType
+              publicUrl
+            }
+            youtubeVideo
+          }
+        }
+      }
+    }
   }
 `;
 
