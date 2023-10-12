@@ -108,7 +108,8 @@ exports.createPages = ({ actions, graphql, reporter }) => {
 
                 let pageTemplate;
                 _.each(result.data.allWpPage.edges, edge => { 
-                    var slug = "/"+langSlugMapping[edge.node.locale.id]+edge.node.slug+"/";
+                    // var slug = "/"+langSlugMapping[edge.node.locale.id]+edge.node.slug+"/";
+                    var slug = "/en/"+edge.node.slug+"/";
                     pageTemplate = path.resolve("./src/templates/page.js");
                     // if (edge.node.slug === "news") {                                       
                     //   pageTemplate = path.resolve("./src/templates/newsListing.js");                                      
@@ -134,6 +135,7 @@ exports.createPages = ({ actions, graphql, reporter }) => {
                         //  context: node
                         ownerNodeId: edge.node.id,
                         context: {
+                           slug: edge.node.slug,
                             id: edge.node.id,
                             lang: langMapping[edge.node.locale.id],
                             langCode: edge.node.locale.id

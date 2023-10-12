@@ -10,15 +10,7 @@ module.exports = {
     {
     resolve: 'gatsby-source-wordpress',
     options: {
-      url: `https://impexpcms.lemonhq.io/wp/graphql`,
-      schema: {
-        previewRequestConcurrency: 150,
-        timeout: 600000,
-        // perPage: 20, // currently set to 100 600000
-        // requestConcurrency: 5, // currently set to 15
-        // previewRequestConcurrency: 2, // currently set to 150
-        // typePrefix: `Wp`,
-      },
+      url: `https://impexpcms.lemonhq.io/wp/graphql`,       
       headers:{
           Authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvc29sdXRpb25jbXMuYWxqaGVhbHRoLmNvbVwvZW5cLyIsImlhdCI6MTY3NDU1MjU2NywibmJmIjoxNjc0NTUyNTY3LCJleHAiOjE2NzQ1NTI4NjcsImRhdGEiOnsidXNlciI6eyJpZCI6IjgifX19.GCNNHjfaYd-rXohKpYiY1N46ES1GRsmd-NMAI06Oh1Q"
       },
@@ -32,19 +24,52 @@ module.exports = {
           allow404Images: true,
           allow401Images: true,
       },
-      html: {
-          useGatsbyImage: true,
-          generateWebpImages: true,
-          placeholderType:'none',
-          createStaticFiles: true,
+      // html: {
+      //     useGatsbyImage: true,
+      //     generateWebpImages: true,
+      //     placeholderType:'none',
+      //     createStaticFiles: true,
 
-      },
-      // type: {
-      //   MediaItem: {
-      //     exclude: true,
-      //   },
       // },
-   
+      develop: {
+        //caches media files outside of Gatsby's default cache an thus allows them to persist through a cache reset.
+        hardCacheMediaFiles: true,
+      },   
+      schema: {
+        previewRequestConcurrency: 150,
+        timeout: 600000,
+        // perPage: 20, // currently set to 100 600000
+        // requestConcurrency: 5, // currently set to 15
+        // previewRequestConcurrency: 2, // currently set to 150
+        // typePrefix: `Wp`,
+      },
+      type: {
+        News: {
+          limit: process.env.NODE_ENV === `development`? 5 : 5000,
+        },     
+        Page: {
+          limit: process.env.NODE_ENV === `development`? 5 : 5000,
+        },    
+        Inthenews: {
+          limit: process.env.NODE_ENV === `development`? 5 : 5000,
+        },
+        Videogallery: {
+          limit: process.env.NODE_ENV === `development`? 5 : 5000,
+        },
+        Ourpeople: {
+          limit: process.env.NODE_ENV === `development`? 5 : 5000,
+        },
+        Spotlightfadyjameel: {
+          limit: process.env.NODE_ENV === `development`? 5 : 5000,
+        },
+        Perspective: {
+          limit: process.env.NODE_ENV === `development`? 5 : 5000,
+        },
+        // MediaItem: {
+        //   exclude: true,
+        // },
+      },  
+    
         
   },
   },
