@@ -12,7 +12,7 @@ import oem_icon from '../common/images/oem_icon.png';
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
 const Page = (props) => {
   console.log("props",props)
-  const currentPage = props.pageContext.wpPage;
+  const currentPage = props.data.wpPage;
 
  
   return (
@@ -29,6 +29,7 @@ const Page = (props) => {
 
             <div className='col-md-12'>
               <div className='heroSection'>
+                {console.log("currentPage",currentPage)}
                 <GatsbyImage image={getImage(currentPage.featuredImage.node.gatsbyImage)} alt={currentPage.featuredImage.node ? currentPage.featuredImage.node : "image"} />
               </div>
             </div>
@@ -60,7 +61,7 @@ export const painPage = graphql`
       id 
       featuredImage {
         node {
-          gatsbyImage
+          gatsbyImage(width: 300)
         }
       }  
     }

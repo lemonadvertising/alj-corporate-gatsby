@@ -24,50 +24,29 @@ module.exports = {
           allow404Images: true,
           allow401Images: true,
       },
-      // html: {
-      //     useGatsbyImage: true,
-      //     generateWebpImages: true,
-      //     placeholderType:'none',
-      //     createStaticFiles: true,
+      html: {
+          useGatsbyImage:  process.env.NODE_ENV === `development`? false : true,    
+          createStaticFiles: process.env.NODE_ENV === `development`? false : true, 
 
-      // },
-      develop: {
-        //caches media files outside of Gatsby's default cache an thus allows them to persist through a cache reset.
+      },
+      // develop: {
+      //   //caches media files outside of Gatsby's default cache an thus allows them to persist through a cache reset.
+      //   hardCacheMediaFiles: true,
+      // },   
+      production: {
         hardCacheMediaFiles: true,
-      },   
+      },
       schema: {
         previewRequestConcurrency: 150,
-        timeout: 600000,
-        // perPage: 20, // currently set to 100 600000
-        // requestConcurrency: 5, // currently set to 15
-        // previewRequestConcurrency: 2, // currently set to 150
-        // typePrefix: `Wp`,
+        timeout: 600000,    
       },
       type: {
-        News: {
-          limit: process.env.NODE_ENV === `development`? 5 : 5000,
-        },     
-        Page: {
-          limit: process.env.NODE_ENV === `development`? 5 : 5000,
-        },    
-        Inthenews: {
-          limit: process.env.NODE_ENV === `development`? 5 : 5000,
-        },
-        Videogallery: {
-          limit: process.env.NODE_ENV === `development`? 5 : 5000,
-        },
-        Ourpeople: {
-          limit: process.env.NODE_ENV === `development`? 5 : 5000,
-        },
-        Spotlightfadyjameel: {
-          limit: process.env.NODE_ENV === `development`? 5 : 5000,
-        },
-        Perspective: {
-          limit: process.env.NODE_ENV === `development`? 5 : 5000,
-        },
-        // MediaItem: {
-        //   exclude: true,
-        // },
+      //   MediaItem:{
+      //     createFileNodes: false,
+      //   localFile: {
+      //     maxFileSizeBytes: 500000, // 10Mb
+      //   }
+      // },       
       },  
     
         
